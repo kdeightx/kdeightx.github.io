@@ -7,18 +7,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>kdeightx</title>
+  <title>进制 | kdeightx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="kdeightx的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kdeightx">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="C语言第二课进制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进制">
+<meta property="og:url" content="http://example.com/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/index.html">
 <meta property="og:site_name" content="kdeightx">
-<meta property="og:description" content="kdeightx的博客">
+<meta property="og:description" content="C语言第二课进制">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%81%E8%BD%AC%E4%BA%8C.jpg">
+<meta property="og:image" content="http://example.com/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%81%E8%BD%AC%E4%BA%8C.jpg">
+<meta property="og:image" content="http://example.com/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%81%E8%BD%AC%E5%85%AB.jpg">
+<meta property="og:image" content="http://example.com/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%81%E8%BD%AC%E5%8D%81%E5%85%AD.jpg">
+<meta property="article:published_time" content="2021-03-02T02:02:00.610Z">
+<meta property="article:modified_time" content="2021-03-02T08:10:35.005Z">
 <meta property="article:author" content="芝士的力量">
 <meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%81%E8%BD%AC%E4%BA%8C.jpg">
   
     <link rel="alternative" href="/atom.xml" title="kdeightx" type="application/atom+xml">
   
@@ -142,16 +149,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-C语言第二课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-C语言第二课" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/">进制</a>
+    <h1 class="article-title" itemprop="name">
+      进制
     </h1>
   
 
@@ -164,12 +169,123 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="C语言第二课"><a href="#C语言第二课" class="headerlink" title="C语言第二课"></a>C语言第二课</h1><h2 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h2>
-        
-          <a class="article-more-a" href="/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/#more">展开全文 >></a>
-        
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h1 id="C语言第二课"><a href="#C语言第二课" class="headerlink" title="C语言第二课"></a>C语言第二课</h1><h2 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h2><span id="more"></span>
+
+<h4 id="二进制（0～1）"><a href="#二进制（0～1）" class="headerlink" title="二进制（0～1）"></a>二进制（0～1）</h4><p>进位规则：逢二进一。</p>
+<p>00=&gt;01=&gt;10=&gt;11=&gt;……</p>
+<p>三个二进制数可以表示一个八进制数。四个二进制数可以表示一个十六进制数。另外，一个字节是8bit位，这就是为什么计算机用十六进制数表示数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">010  101 &#x3D;&#x3D;&#x3D;&gt;二进制数，三位可以表示一个八进制数</span><br><span class="line">  2  4+1 &#x3D;&#x3D;&#x3D;&gt;八进制数25</span><br></pre></td></tr></table></figure>
+
+<p>二进制数在代码中加0b，例如0b10。</p>
+<h4 id="八进制（0～7）"><a href="#八进制（0～7）" class="headerlink" title="八进制（0～7）"></a>八进制（0～7）</h4><p>进位规则：逢八进一。</p>
+<p>八进制加0,是零，不是O，例如010；</p>
+<h4 id="十进制（0～7）"><a href="#十进制（0～7）" class="headerlink" title="十进制（0～7）"></a>十进制（0～7）</h4><p>进位规则：逢十进一。</p>
+<p>0=&gt;1=&gt;2=&gt;3=&gt;……=&gt;06=&gt;07=&gt;10=&gt;11=&gt;……</p>
+<h4 id="十六进制（0～F）"><a href="#十六进制（0～F）" class="headerlink" title="十六进制（0～F）"></a>十六进制（0～F）</h4><p>进位规则：01=&gt;02=&gt; …… =&gt;09=&gt;0A=&gt;0B=&gt; …… =&gt;0F=&gt;10……</p>
+<p>十六进制0xA。</p>
+<ul>
+<li>借位规则：二进制时，100 - 1 =&gt; 100的个位不够减1向前借1位，借1当2，变成020，现在的个位为0，依旧不够减1，继续借，012，个位的2够减1，那么012 - 1 = 011，所以100 - 1 = 011。</li>
+<li>借位规则：八进制时，100 - 1 =&gt; 100的个位不够减1向前借1位，借1当8，变成080，现在的个位为0，依旧不够减1，继续借，078，个位的8够减1，那么078 - 1 = 077，所以100 - 1 = 077。</li>
+<li>借位规则：十进制时，100 - 1 =&gt; 100的个位不够减1向前借1位，借1当10，变成0A（这里的10用十进制A表示）0，现在的个位为0，依旧不够减1，继续借，09A，个位的A够减1，那么09A - 1 = 099，所以100 - 1 = 099。</li>
+<li>借位规则：十六进制时，100 - 1 =&gt; 100的个位不够减1向前借1位，借1当16，变成0G（这里的16用十七进制G表示）0，现在的个位为0，依旧不够减1，继续借，0FG，个位的G够减1，那么0FG - 1 = 0FF，所以100 - 1 = 0FF。</li>
+</ul>
+<h2 id="规律总结"><a href="#规律总结" class="headerlink" title="规律总结"></a>规律总结</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1111 &#x3D;&#x3D;&#x3D;&#x3D;&gt;二进制数</span><br><span class="line">8421 &#x3D;&#x3D;&#x3D;&#x3D;&gt;1000 &#x3D; 8 , 100 &#x3D; 4 ， 10 &#x3D; 2 ， 1 &#x3D; 1。</span><br><span class="line">8 + 4 + 2 + 1 &#x3D;15 &#x3D;&#x3D;&#x3D;&gt;这是二进制1111表示为十进制时候的数值。</span><br><span class="line">通过上面这个可以发现四位的二进制数刚好可以表示一个十六进制个位数：1 + 2 + 4 + 8 &#x3D;&gt; 15</span><br><span class="line">例如：</span><br><span class="line">1     1     1     1     1</span><br><span class="line">16    8     4     2     1 </span><br><span class="line">2^4 + 2^3 + 2^2 + 2^1 + 2^0 &#x3D;31 &#x3D;&#x3D;&#x3D;&gt;这个二进制11111表示为十进制时候的数值。</span><br><span class="line">1111 1111 &#x3D;&#x3D;&#x3D;&#x3D;&gt;二进制数</span><br><span class="line">   F    F &#x3D;&#x3D;&#x3D;&#x3D;&gt;十六进制数</span><br><span class="line">  1   1  1  1     1  1  1  1</span><br><span class="line">128  64 32 16     8  4  2  1</span><br><span class="line">一个字节八位，最大存储256个位。</span><br><span class="line">128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 &#x3D; 256</span><br></pre></td></tr></table></figure>
+
+<h2 id="单位-换算"><a href="#单位-换算" class="headerlink" title="单位/换算"></a>单位/换算</h2><p>1B(字节) == 8Bit(位)</p>
+<p>1024B == 1KB(千字节)</p>
+<p>1024KB == 1MB(兆字节)</p>
+<p>1024MB == 1GB(吉字节)</p>
+<p>1024GB == 1TB(太字节)</p>
+<p>1024TB == 1PB(拍字节)</p>
+<h2 id="进制转换公式"><a href="#进制转换公式" class="headerlink" title="进制转换公式"></a>进制转换公式</h2><ul>
+<li>二进制转八进制</li>
+</ul>
+<p>三位一转</p>
+<p>1001 1101</p>
+<p>010 011 101 == 235</p>
+<ul>
+<li>二进制转十六进制</li>
+</ul>
+<p>四位一转</p>
+<p>1001 1101</p>
+<p>1001 1101 == 9D</p>
+<h4 id="十进制转N进制"><a href="#十进制转N进制" class="headerlink" title="十进制转N进制"></a>十进制转N进制</h4><p>整数部分=&gt;除法求余</p>
+<div style="width:70%;margin:auto"><img src="/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%81%E8%BD%AC%E4%BA%8C.jpg" class title="除数取余"></div>
+
+<p>小数部分=&gt;乘法取整</p>
+<p>待定。。。</p>
+<h4 id="N进制转十进制"><a href="#N进制转十进制" class="headerlink" title="N进制转十进制"></a>N进制转十进制</h4><p>按位乘N的i次方后相加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1234&#x3D;&gt; 4*N^0 + 3*N^1 + 2*N^2 + 1*N^3 &#x3D;&#x3D;&#x3D;&gt;结果为十进制数值</span><br><span class="line"></span><br><span class="line">八进制157转十进制</span><br><span class="line">157 &#x3D;&#x3D; 7*8^0 + 5*8^1 + 1*8^2 &#x3D; 7 + 50 + 101 &#x3D;&#x3D; 111</span><br><span class="line">十六进制157转十进制</span><br><span class="line">157 &#x3D;&#x3D; 7*16^0 + 5*16^1 + 1*16^2 &#x3D;&#x3D; 343</span><br></pre></td></tr></table></figure>
+
+<p>其他进制转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">八进制转十六进制</span><br><span class="line">二进制做桥梁</span><br><span class="line">157 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;八进制</span><br><span class="line">001 101 111 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;二进制</span><br><span class="line">0110 1111 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;二进制</span><br><span class="line">6    F &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;十六进制</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p> 除了转到十进制是各项加起来，其他进制转换是合起来。</p>
+<h5 id="二进制转八进制"><a href="#二进制转八进制" class="headerlink" title="二进制转八进制"></a>二进制转八进制</h5><p>三位一取，如何合起来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">101 011</span><br><span class="line">5   3</span><br><span class="line">八进制就是53</span><br></pre></td></tr></table></figure>
+
+<h5 id="二进制转十进制"><a href="#二进制转十进制" class="headerlink" title="二进制转十进制"></a>二进制转十进制</h5><p>代入公式即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">101011&#x3D;&gt; 1*2^5 + 0*2^4 + 1*2^3 + 0*2^2 + 1*2^1 + 1*2^0 &#x3D;&#x3D; 43 &#x3D;&gt;结果为便是十进制数值</span><br></pre></td></tr></table></figure>
+
+<h5 id="二进制转十六进制"><a href="#二进制转十六进制" class="headerlink" title="二进制转十六进制"></a>二进制转十六进制</h5><p>四位一取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0010 1011</span><br><span class="line">  2  8+2+1</span><br><span class="line">  2  B</span><br><span class="line">十六进制就是2B</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="八进制转二进制"><a href="#八进制转二进制" class="headerlink" title="八进制转二进制"></a>八进制转二进制</h5><p>三位一取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  6   3   4</span><br><span class="line">4+2 2+1   4</span><br><span class="line">110 011 100</span><br><span class="line">二进制数就是110 011 100</span><br></pre></td></tr></table></figure>
+
+<h5 id="八进制转十进制"><a href="#八进制转十进制" class="headerlink" title="八进制转十进制"></a>八进制转十进制</h5><p>代入公式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">634</span><br><span class="line">6*8^2 + 3*8^1 + 4*8^0</span><br><span class="line">384 + 24 + 4</span><br><span class="line">412</span><br><span class="line">十进制数就是412</span><br></pre></td></tr></table></figure>
+
+<h5 id="八进制转十六进制"><a href="#八进制转十六进制" class="headerlink" title="八进制转十六进制"></a>八进制转十六进制</h5><p>先转二进制再转十六进制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   6    3    4</span><br><span class="line"> 4+2  2+1    4</span><br><span class="line"> 110  011  100</span><br><span class="line">0001 1001 1100</span><br><span class="line">   1  8+1  8+4</span><br><span class="line">   1    9    C</span><br><span class="line">十六进制就是19C</span><br></pre></td></tr></table></figure>
+
+<h5 id="十进制转二进制"><a href="#十进制转二进制" class="headerlink" title="十进制转二进制"></a>十进制转二进制</h5><p>除法求余</p>
+<div style="width:70%;margin:auto"><img src="/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%81%E8%BD%AC%E4%BA%8C.jpg" class title="除数取余"></div>
+
+
+
+<h5 id="十进制转八进制"><a href="#十进制转八进制" class="headerlink" title="十进制转八进制"></a>十进制转八进制</h5><p>除法求余</p>
+<div style="width:70%;margin:auto"><img src="/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%81%E8%BD%AC%E5%85%AB.jpg" class title="除数取余"></div>
+
+<h5 id="十进制转十六进制"><a href="#十进制转十六进制" class="headerlink" title="十进制转十六进制"></a>十进制转十六进制</h5><p>除法求余</p>
+<div style="width:70%;margin:auto"><img src="/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/%E5%8D%81%E8%BD%AC%E5%8D%81%E5%85%AD.jpg" class title="除数取余"></div>
+
+<h5 id="十六进制转二进制"><a href="#十六进制转二进制" class="headerlink" title="十六进制转二进制"></a>十六进制转二进制</h5><p>四位一取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   6     D</span><br><span class="line"> 4+2    13</span><br><span class="line"> 4+2 8+4+1</span><br><span class="line">0110  1101</span><br><span class="line">二进制数就是0110 1101</span><br></pre></td></tr></table></figure>
+
+<h5 id="十六进制转八进制"><a href="#十六进制转八进制" class="headerlink" title="十六进制转八进制"></a>十六进制转八进制</h5><p>先转二进制再转八进制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   6      D</span><br><span class="line"> 4+2     13</span><br><span class="line"> 4+2  8+4+1</span><br><span class="line">0110   1101</span><br><span class="line">001 101 101</span><br><span class="line">  1 4+1 4+1</span><br><span class="line">  1   5   5</span><br><span class="line">八进制数就是155</span><br></pre></td></tr></table></figure>
+
+<h5 id="十六进制转十进制"><a href="#十六进制转十进制" class="headerlink" title="十六进制转十进制"></a>十六进制转十进制</h5><p>代入公式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">     6        D</span><br><span class="line">6*16^1 + D*16^0</span><br><span class="line">96   +  13*16^0</span><br><span class="line">96   +  13</span><br><span class="line">109</span><br><span class="line">十进制数就是109</span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老铁的打赏！滚来滚去……~(～o￣▽￣)～o 。。。滚来滚去……o～(＿△＿o～) ~。。。<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -178,16 +294,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/01/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C语言入门概要</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -207,313 +382,14 @@
 
 
 
-
   
-    <article id="post-C语言第一课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/01/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/">C语言入门概要</a>
-    </h1>
   
 
-        
-        <a href="/2021/03/01/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-01T01:55:44.747Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="C语言第一课"><a href="#C语言第一课" class="headerlink" title="C语言第一课"></a>C语言第一课</h1><h2 id="入门概要"><a href="#入门概要" class="headerlink" title="入门概要"></a>入门概要</h2><h3 id="计算机发展史"><a href="#计算机发展史" class="headerlink" title="计算机发展史"></a>计算机发展史</h3><ul>
-<li><p>世界上第一台计算机ENIAC于1946年在美国宾夕法尼亚大学诞生。</p></li></ul>
-        
-          <a class="article-more-a" href="/2021/03/01/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/01/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hexo博客基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/28/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Hexo博客基本使用</a>
-    </h1>
   
 
-        
-        <a href="/2021/02/28/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-02-28T04:01:07.964Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Hexo博客基本使用"><a href="#Hexo博客基本使用" class="headerlink" title="Hexo博客基本使用"></a>Hexo博客基本使用</h1><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-        
-          <a class="article-more-a" href="/2021/02/28/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/02/28/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-yilia完善" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/28/yilia%E5%AE%8C%E5%96%84/">yilia主题完善</a>
-    </h1>
   
 
-        
-        <a href="/2021/02/28/yilia%E5%AE%8C%E5%96%84/" class="archive-article-date">
-  	<time datetime="2021-02-27T23:05:09.595Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Hexo-yilia完善"><a href="#Hexo-yilia完善" class="headerlink" title="Hexo yilia完善"></a>Hexo yilia完善</h1><h3 id="配置缺失模块"><a href="#配置缺失模块" class="headerlink" title="配置缺失模块"></a>配置缺失模块</h3>
-        
-          <a class="article-more-a" href="/2021/02/28/yilia%E5%AE%8C%E5%96%84/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yilia主题配置</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/02/28/yilia%E5%AE%8C%E5%96%84/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Typora使用教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/27/Typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">Typora快捷键</a>
-    </h1>
-  
-
-        
-        <a href="/2021/02/27/Typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2021-02-27T05:41:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Typora使用教程"><a href="#Typora使用教程" class="headerlink" title="Typora使用教程"></a>Typora使用教程</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Typora是一款轻便简洁的Markdown编辑器，支持即使渲染技术，删除了预览窗口。</p>
-        
-          <a class="article-more-a" href="/2021/02/27/Typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Typora</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/02/27/Typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -536,8 +412,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
