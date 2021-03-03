@@ -144,6 +144,112 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C语言第三课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E8%AF%BE/">输入输出、数据类型</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-03-03T02:12:54.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h1 id="C语言第三课"><a href="#C语言第三课" class="headerlink" title="C语言第三课"></a>C语言第三课</h1><h2 id="C语言简史"><a href="#C语言简史" class="headerlink" title="C语言简史"></a>C语言简史</h2><ul>
+<li>1950年欧美计算机学家合力推出了ALGOL算法语言</li>
+<li>1958年ACM小组（美国计算机协会）和联邦德国的应用数学和力学协会（GAMM）在苏黎世把他们关于算法表示法的建议综合为一种编程语言，命名为IAL，后改为AIGOL58。</li>
+<li>1960年图灵奖获得者艾伦佩利（<code>Alan J.Perlis</code>）发表了“算法语言Algol 60报告”，确定了程序设计语言ALGOL 60。</li>
+<li>1963年英国剑桥大学推出了基于ALGOL 60的高级语言CPL语言。</li>
+<li>1967年英国剑桥大学对CPL语言做了简化，推出了BCPL语言。</li>
+<li>1970年美国贝尔实验室的肯-汤普森（<code>Ken Thompson</code>）以BCPL语言为基础推出了B语言（取BCPL的第一个字母）。并用B语言编写了第一个UNIX操作系统。</li>
+<li>1972年贝尔实验室的丹尼斯-里奇（<code>D.M.Ritchie</code>）在B语言的基础上设计出了C语言。丹尼斯-里奇（<code>D.M.Ritchie</code>）和肯-汤普森（<code>Ken Thompson</code>）用C语言重写了UNIX系统。</li>
+</ul>
+<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h5 id="IDE-1"><a href="#IDE-1" class="headerlink" title="IDE"></a>IDE</h5><p>集成开发环境，用于提供程序开发环境的应用程序。一般包括代码编辑器、编译器、调试器和图形用户界面等工具。集成了代码编写功能、分析功能、编译功能、调试功能等一体化的开发软件服务套。</p>
+<h5 id="创建第一个程序"><a href="#创建第一个程序" class="headerlink" title="创建第一个程序"></a>创建第一个程序</h5><p>stdio===&gt;standard input &amp; output===&gt;标准输入输出</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;hello word!&quot;</span>);   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Main函数"><a href="#Main函数" class="headerlink" title="Main函数"></a>Main函数</h3><h5 id="C语言的入口函数main"><a href="#C语言的入口函数main" class="headerlink" title="C语言的入口函数main"></a>C语言的入口函数main</h5><p>任何C语言程序只能有一个main函数，被称为主函数。</p>
+<h5 id="main函数的参数"><a href="#main函数的参数" class="headerlink" title="main函数的参数"></a>main函数的参数</h5><p>C语言标准中，main的参数有两个，一个十<code>int</code>类型的<code>argc</code>，一个是<code>char*</code>数组的<code>argv</code>。它们对应的是命令行传来的命令行传来的命令行参数。windows命令行通过<code>echo &amp;errorLeveI%</code>命令可以获取到return返回值。</p>
+<p><code>argc</code>该变量是用来统计<code>argv</code>数组里参数的数量。</p>
+<h2 id="MSDN、输入输出"><a href="#MSDN、输入输出" class="headerlink" title="MSDN、输入输出"></a>MSDN、输入输出</h2><ul>
+<li><p>MSDN</p>
+<p>微软提供的一种信息服务</p>
+<p>介绍各种编程技巧</p>
+</li>
+<li><p><code>printf</code></p>
+<p>格式化输出函数，向标准输出设备按规定格式输出。</p>
+<p>函数原型</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">printf</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *format[,argument]...)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>scanf</code></p>
+<p>从标准输入流中读取格式化数据。</p>
+<p>函数原型</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">scanf</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *format[,argument]...)</span></span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li><p>数据类型</p>
+<p><code>byte</code>/<code>char</code>、<code>short</code>、<code>int</code>、<code>long</code>、<code>longlong</code>、<code>float</code>、<code>double</code>、<code>signed</code>、<code>unsigned</code></p>
+<p>1字节、2字节、4字节、4字节、8字节、4字节、8字节。</p>
+</li>
+<li><p><code>int</code>和<code>long</code>的区别</p>
+<p>早期的操作系统是16位，<code>int</code>用2字节表示，long用4字节表示。</p>
+<p>发展到32位操作系统，<code>int</code>用4字节表示，与long相同。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-C语言第二课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
