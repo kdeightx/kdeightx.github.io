@@ -9,15 +9,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>函数 | kdeightx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C语言第五课函数函数的由来早期编写代码的时候人们发现只有遇到跳转指令之后才会跳转到目的指令处继续执行。所有代码都是按照将要执行的顺序排列，人们发现这样写代码非常费劲且容易出错，因为经常编写同样的代码导致工作量大幅度增加还浪费空间。为了节省空间和提高工作效率，于是想出了将经常使用的功能性代码提出来单独封装，并留出接口和外界通信。被封装的代码就是函数。 优点节省空间，对代码编写者阅读性大大提高，可维护">
+  <meta name="description" content="C语言第五课函数函数的由来早期编写代码的时候人们发现只有遇到跳转指令之后才会跳转到目的指令处继续执行。所有代码都是按照将要执行的顺序排列，人们发现这样写代码非常费劲且容易出错，因为经常编写同样的代码导致工作量大幅度增加还浪费空间。为了节省空间和提高工作效率，于是想出了将经常使用的功能性代码提出来单独封装，并留出接口和外界通信。被封装的代码就是函数。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数">
 <meta property="og:url" content="http://example.com/2021/03/05/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E8%AF%BE/index.html">
 <meta property="og:site_name" content="kdeightx">
-<meta property="og:description" content="C语言第五课函数函数的由来早期编写代码的时候人们发现只有遇到跳转指令之后才会跳转到目的指令处继续执行。所有代码都是按照将要执行的顺序排列，人们发现这样写代码非常费劲且容易出错，因为经常编写同样的代码导致工作量大幅度增加还浪费空间。为了节省空间和提高工作效率，于是想出了将经常使用的功能性代码提出来单独封装，并留出接口和外界通信。被封装的代码就是函数。 优点节省空间，对代码编写者阅读性大大提高，可维护">
+<meta property="og:description" content="C语言第五课函数函数的由来早期编写代码的时候人们发现只有遇到跳转指令之后才会跳转到目的指令处继续执行。所有代码都是按照将要执行的顺序排列，人们发现这样写代码非常费劲且容易出错，因为经常编写同样的代码导致工作量大幅度增加还浪费空间。为了节省空间和提高工作效率，于是想出了将经常使用的功能性代码提出来单独封装，并留出接口和外界通信。被封装的代码就是函数。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-05T01:55:36.687Z">
-<meta property="article:modified_time" content="2021-03-05T08:46:59.252Z">
+<meta property="article:modified_time" content="2021-03-05T08:50:45.652Z">
 <meta property="article:author" content="芝士的力量">
 <meta property="article:tag" content="递归">
 <meta name="twitter:card" content="summary">
@@ -166,6 +166,8 @@
       
 	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
         <h1 id="C语言第五课"><a href="#C语言第五课" class="headerlink" title="C语言第五课"></a>C语言第五课</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数的由来"><a href="#函数的由来" class="headerlink" title="函数的由来"></a>函数的由来</h3><p>早期编写代码的时候人们发现只有遇到跳转指令之后才会跳转到目的指令处继续执行。所有代码都是按照将要执行的顺序排列，人们发现这样写代码非常费劲且容易出错，因为经常编写同样的代码导致工作量大幅度增加还浪费空间。为了节省空间和提高工作效率，于是想出了将经常使用的功能性代码提出来单独封装，并留出接口和外界通信。被封装的代码就是函数。</p>
+<span id="more"></span>
+
 <h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>节省空间，对代码编写者阅读性大大提高，可维护性就变强了。</p>
 <h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>性能慢，用时间换空间。在调用函数的时候，不如函数在main里面来的快，因为这中间的过程对计算机来说做了备份等工作。自然时间上就花了更多。</p>
 <h2 id="主函数、库函数、自定义函数"><a href="#主函数、库函数、自定义函数" class="headerlink" title="主函数、库函数、自定义函数"></a>主函数、库函数、自定义函数</h2><h3 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h3><p>主函数是可执行程序的入口函数。当操作系统加载可执行程序到内存中，并且为可执行程序开辟进程空间后，系统调用的可执行程序内的第一个函数。</p>
