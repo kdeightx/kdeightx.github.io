@@ -144,6 +144,232 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C语言第五课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/05/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E8%AF%BE/">函数</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/05/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-03-05T01:55:36.687Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h1 id="C语言第五课"><a href="#C语言第五课" class="headerlink" title="C语言第五课"></a>C语言第五课</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数的由来"><a href="#函数的由来" class="headerlink" title="函数的由来"></a>函数的由来</h3><p>早期编写代码的时候人们发现只有遇到跳转指令之后才会跳转到目的指令处继续执行。所有代码都是按照将要执行的顺序排列，人们发现这样写代码非常费劲且容易出错，因为经常编写同样的代码导致工作量大幅度增加还浪费空间。为了节省空间和提高工作效率，于是想出了将经常使用的功能性代码提出来单独封装，并留出接口和外界通信。被封装的代码就是函数。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>节省空间，对代码编写者阅读性大大提高，可维护性就变强了。</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>性能慢，用时间换空间。在调用函数的时候，不如函数在main里面来的快，因为这中间的过程对计算机来说做了备份等工作。自然时间上就花了更多。</p>
+<h2 id="主函数、库函数、自定义函数"><a href="#主函数、库函数、自定义函数" class="headerlink" title="主函数、库函数、自定义函数"></a>主函数、库函数、自定义函数</h2><h3 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h3><p>主函数是可执行程序的入口函数。当操作系统加载可执行程序到内存中，并且为可执行程序开辟进程空间后，系统调用的可执行程序内的第一个函数。</p>
+<p><code>main()</code>函数是C语言中的主函数，一个C程序有且仅有一个<code>main()</code>函数。</p>
+<blockquote>
+<p>注意：其实真正的函数入口不是<code>main()</code>，只不过<code>main()</code>函数在用户界面看时是入口而已，系统内部不是。</p>
+</blockquote>
+<h3 id="库函数"><a href="#库函数" class="headerlink" title="库函数"></a>库函数</h3><p>库函数是指把一些常用的函数单独封装到库文件/头文件里供人调用。调用时要用<code>#include&lt;文件名.h&gt;</code>包含调用函数所在的库文件/头文件</p>
+<h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><p>自定义函数是指用户自己按需要编写的函数。调用时需要用<code>#include“文件名.h”</code>包含调用函数所在的头文件。</p>
+<h2 id="函数的定义等基本语法"><a href="#函数的定义等基本语法" class="headerlink" title="函数的定义等基本语法"></a>函数的定义等基本语法</h2><ul>
+<li><p>函数的定义</p>
+<p>返回值 函数名（参数类型 参数1，参数类型 参数2）</p>
+<blockquote>
+<p>括号内可以不传参数，根据需要选择是否传参。</p>
+<p>另外如果没有返回值可选择<code>void</code>这种类型</p>
+</blockquote>
+</li>
+<li><p>函数声明</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MyFun</span><span class="params">(<span class="keyword">int</span> nNum1,<span class="keyword">int</span> nNum2)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数实现</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MyFun</span><span class="params">(<span class="keyword">int</span> nNum1,<span class="keyword">int</span> nNum2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	...<span class="comment">//代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>形参和实参</p>
+<ul>
+<li><p>形参：定义函数名和函数体的时候使用的参数，目的是用来接收调用该函数时传递的参数。</p>
+</li>
+<li><p>实参：调用时传递给函数的参数，实参可以是常量，变量，表达式，函数等，在进行函数调用时，实参必须具有确定值。</p>
+<blockquote>
+<p>实参传递给形参的数值是拷贝过去的值，不会影响到原参数。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>想要实现自定义函数和主函数文件分开保存可以</p>
+<p>1、新建一个包含自定义函数代码实现功能的<code>.c</code>源文件，这个文件里写自定义函数的实现过程。</p>
+<p>2、新建一个包含自定义函数声明代码的<code>.h</code>头文件，这个文件里写自定义函数的函数声明。</p>
+<p>3、在有主函数<code>main()</code>的<code>.c</code>源文件里用#include “文件名.h”包含上面这个自定义函数声明代码的<code>.h</code>头文件名。</p>
+<blockquote>
+<p>这样自定义函数的实现代码就和主函数分开了，需要转移到别的主函数文件时，只需要将自定义函数的<code>.c</code>和<code>.h</code>两个文件加入即可。</p>
+</blockquote>
+<h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><ul>
+<li><p>命名</p>
+<p>为了统一编码风格及提高代码可读性，所以约定对变量名、函数名等采用统一风格的命名。</p>
+</li>
+<li><p>匈牙利命名法</p>
+<p>微软采用的一种编码时命名规范，其基本原则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量名&#x3D;属性+类型+对象描述    </span><br><span class="line">int nNumber &#x3D; 0;</span><br></pre></td></tr></table></figure>
+
+<p>对象的名称要求有明确的含义。据说这种命名法是一位匈牙利程序员发明的。</p>
+</li>
+<li><p>驼峰命名法</p>
+<ul>
+<li><p>大驼峰</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int MyFun &#x3D; 0;     &#x3D;&#x3D;&#x3D;&gt;第一个单词首字母大写，后一个单词首字母大写</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>小驼峰</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int myFun &#x3D; 0;     &#x3D;&#x3D;&#x3D;&gt;第一个单词首字母小写，后一个单词首字母大写</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><ul>
+<li><p>函数直接或间接调用函数本身，则该函数被称为递归函数。</p>
+</li>
+<li><pre><code class="c">void MyFun()
+&#123;
+    //...
+    if(...)
+    &#123;
+        MyFun();
+    &#125;
+    //...
+&#125;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">递归的运用比如目录的结构就是。</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;c</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int MyAddFun(int);</span><br><span class="line"></span><br><span class="line">int mian()</span><br><span class="line">&#123;</span><br><span class="line">    int nRet &#x3D; 0;</span><br><span class="line">	nRet &#x3D; MyAddFun(5);      &#x3D;&#x3D;&#x3D;&#x3D;&gt;调用函数并将结果存放到变量nRet里面</span><br><span class="line">    printf(&quot;%d\r\n&quot;,nRet);</span><br><span class="line">&#125;</span><br><span class="line">int MyAddFun(int nNum)</span><br><span class="line">&#123;</span><br><span class="line">    int Temp &#x3D; 0;            &#x3D;&#x3D;&#x3D;&#x3D;&gt;用来存放递归结果</span><br><span class="line">	if(nNum &#x3D;&#x3D; 1)</span><br><span class="line">    &#123;</span><br><span class="line">        return 1;            &#x3D;&#x3D;&#x3D;&#x3D;&gt;给递归一个结束的返回值</span><br><span class="line">    &#125;</span><br><span class="line">    Temp &#x3D; nNum + MyAddFun(nNum - 1);   &#x3D;&#x3D;&#x3D;&gt;递归核心，实现不断自我调用</span><br><span class="line">    return Temp;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;  5 + MyAddFun(nNum - 1)</span><br><span class="line">&#x2F;&#x2F;  5 + 4 + MyAddFun(nNum - 1)</span><br><span class="line">&#x2F;&#x2F;  5 + 4 + 3 + MyAddFun(nNum - 1)</span><br><span class="line">&#x2F;&#x2F;  5 + 4 + 3 + 2 + MyAddFun(nNum - 1)</span><br><span class="line">&#x2F;&#x2F;  5 + 4 + 3 + 2 + 1 &#x3D;&#x3D;&#x3D;&gt;由于此时MyAddFun(nNum - 1)中(nNum - 1)结果为1，触发if判断执行return 1。</span><br><span class="line">&#x2F;&#x2F;                    MyAddFun（nNum - 1）&#x3D;&#x3D; 1；</span><br><span class="line">&#x2F;&#x2F;再往后一步一步往回走，结果就出来了。</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;MyAddFun(5)</span><br><span class="line">&#x2F;&#x2F;5 + MyAddFun(4)</span><br><span class="line">&#x2F;&#x2F;4 + MyAddFun(3)</span><br><span class="line">&#x2F;&#x2F;3 + MyAddFun(2)</span><br><span class="line">&#x2F;&#x2F;2 + MyAddFun(1)</span><br><span class="line">&#x2F;&#x2F;1</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>在调试代码的时候，将变量放到监视窗口后，可以通过在变量前加上<code>&amp;</code>取地址符获取该变量在内存中的位置。通过这种方法查看内存数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int nNumber &#x3D; 10;</span><br><span class="line">&amp;nNumber         &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;假定nNumber在内存中的地址为0X0019FF28</span><br><span class="line">因为是int型占四个字节</span><br><span class="line">所以它在内存中的数据为  0  A     0  0     0  0     0  0</span><br><span class="line">读法是顺序是          7-&gt;8     5-&gt;6     3-&gt;4     1-&gt;2</span><br><span class="line">十进制的10在内存中以十六进制A显示</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/05/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-C语音第四课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/04/C%E8%AF%AD%E9%9F%B3%E7%AC%AC%E5%9B%9B%E8%AF%BE/">分支与循环</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/04/C%E8%AF%AD%E9%9F%B3%E7%AC%AC%E5%9B%9B%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-03-04T14:52:03.230Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C语言第四课"><a href="#C语言第四课" class="headerlink" title="C语言第四课"></a>C语言第四课</h1><h2 id="分支与循环"><a href="#分支与循环" class="headerlink" title="分支与循环"></a>分支与循环</h2><h5 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h5><ul>
+<li><p>siezeof 运算符</p>
+<ul>
+<li><p>sizeof</p></li></ul></li></ul>
+        
+          <a class="article-more-a" href="/2021/03/04/C%E8%AF%AD%E9%9F%B3%E7%AC%AC%E5%9B%9B%E8%AF%BE/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/04/C%E8%AF%AD%E9%9F%B3%E7%AC%AC%E5%9B%9B%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-C语言第三课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -676,6 +902,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
               </li>
              
               <li class="article-tag-list-item">
