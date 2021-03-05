@@ -17,7 +17,7 @@
 <meta property="og:description" content="C语言第四课分支与循环运算符 siezeof 运算符  sizeof">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-04T14:52:03.230Z">
-<meta property="article:modified_time" content="2021-03-05T08:57:55.117Z">
+<meta property="article:modified_time" content="2021-03-05T13:25:25.240Z">
 <meta property="article:author" content="芝士的力量">
 <meta property="article:tag" content="循环结构">
 <meta property="article:tag" content="运算符">
@@ -40,6 +40,14 @@
   
 
 <meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!--������̻���ըЧ������Ҫ����jQuery-->
+
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -175,22 +183,19 @@
 </ul>
 </li>
 <li><p>算术运算符</p>
-<ul>
-<li><pre><code>+ - * / % ++ --
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 关系运算符</span><br><span class="line"></span><br><span class="line">  - &#96;&#96;&#96;</span><br><span class="line">    &#x3D;&#x3D; 与 !&#x3D;       等于   和   不等于</span><br><span class="line">    &gt; 与 &lt;         大于   和   小于</span><br><span class="line">    &gt;&#x3D;与&lt;&#x3D;         大于等于 和  小于等于</span><br></pre></td></tr></table></figure>
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ - * &#x2F; % ++ --</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p>关系运算符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D; 与 !&#x3D;       等于   和   不等于</span><br><span class="line">&gt; 与 &lt;         大于   和   小于</span><br><span class="line">&gt;&#x3D;与&lt;&#x3D;         大于等于 和  小于等于</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>逻辑运算符</p>
-<ul>
-<li><pre><code>&amp;&amp; 与 || 与 !    逻辑与   和   逻辑或   和   逻辑非   
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 条件运算符</span><br><span class="line"></span><br><span class="line">  - &#96;&#96;&#96;</span><br><span class="line">    ?:三元运算符</span><br></pre></td></tr></table></figure>
-
-
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp; 与 || 与 !    逻辑与   和   逻辑或   和   逻辑非 </span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p>条件运算符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?:三元运算符</span><br></pre></td></tr></table></figure>
+
+
+
 <h5 id="if…else分支结构"><a href="#if…else分支结构" class="headerlink" title="if…else分支结构"></a>if…else分支结构</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if(表达式)             &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;判断是否成立</span><br><span class="line">&#123;</span><br><span class="line">    语句一             &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;成立时执行这里的语句</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    语句二             &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;不成立时执行这里的语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
