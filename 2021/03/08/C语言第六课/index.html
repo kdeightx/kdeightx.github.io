@@ -7,17 +7,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: Typora | kdeightx</title>
+  <title>数组 | kdeightx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="kdeightx的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kdeightx">
-<meta property="og:url" content="http://example.com/tags/Typora/index.html">
+  <meta name="description" content="C语言第六课数组数组的由来、定义及初始化 数组的由来 数组是用来存储多个（有限）相同类型数据的集合，组成数组的各个变量称为数组元素，数组元素也是一种变量。为了区分数组的各个元素，给数组进行了编号，也称为下标。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="http://example.com/2021/03/08/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/index.html">
 <meta property="og:site_name" content="kdeightx">
-<meta property="og:description" content="kdeightx的博客">
+<meta property="og:description" content="C语言第六课数组数组的由来、定义及初始化 数组的由来 数组是用来存储多个（有限）相同类型数据的集合，组成数组的各个变量称为数组元素，数组元素也是一种变量。为了区分数组的各个元素，给数组进行了编号，也称为下标。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-08T02:37:30.136Z">
+<meta property="article:modified_time" content="2021-03-08T14:18:01.747Z">
 <meta property="article:author" content="芝士的力量">
-<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="数组">
+<meta property="article:tag" content="冒泡">
+<meta property="article:tag" content="排序">
+<meta property="article:tag" content="查找">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="kdeightx" type="application/atom+xml">
@@ -144,64 +149,262 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-C语言第六课" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/27/Typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2021-02-27T05:41:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/27/Typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">Typora快捷键</a>
+    <h1 class="article-title" itemprop="name">
+      数组
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/03/08/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-03-08T02:37:30.136Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h1 id="C语言第六课"><a href="#C语言第六课" class="headerlink" title="C语言第六课"></a>C语言第六课</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h4 id="数组的由来、定义及初始化"><a href="#数组的由来、定义及初始化" class="headerlink" title="数组的由来、定义及初始化"></a>数组的由来、定义及初始化</h4><ul>
+<li><p>数组的由来</p>
+<p>数组是用来存储多个（有限）相同类型数据的集合，组成数组的各个变量称为数组元素，数组元素也是一种变量。为了区分数组的各个元素，给数组进行了编号，也称为下标。</p>
+<span id="more"></span>
+</li>
+<li><p>数组定义</p>
+<p>数组的定义：数组类型说明符 数组名[数组元素个数]，数组元素个数只能是<code>常量</code>或<code>常量表达式</code>。</p>
+<p>数组元素的引用方式：数组名[下标]。</p>
+</li>
+<li><p>数组初始化</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> Array[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> Array[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="数组的传参"><a href="#数组的传参" class="headerlink" title="数组的传参"></a>数组的传参</h4><ul>
+<li>数组传参</li>
+<li>例如：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> anArray[])</span>   <span class="comment">//anArray[]这个数组是临时创建的数组变量，不是下面的数组变量，变量名可以不同</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//...</span></span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> anArray[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">	fun(anArray);<span class="comment">//传递数组首地址</span></span><br><span class="line">	fun(&amp;anArray[<span class="number">2</span>]);<span class="comment">//传递下标为2的元素的地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="冒泡、选择排序和查找"><a href="#冒泡、选择排序和查找" class="headerlink" title="冒泡、选择排序和查找"></a>冒泡、选择排序和查找</h4><ul>
+<li><p>冒泡排序</p>
+<p>两个相邻的元素依次比较，如果从小到大排序，第一个值如果比第二个值大则进行交换，以此类推。最大值则会依次沉入数组最后面，最小值则会慢慢排到数组最前面。如果从大到小排序，条件相反，第一个值如果比第二个值小则进行交换。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> anArray[<span class="number">6</span>] = &#123;<span class="number">8</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">7</span>&#125;;</span><br><span class="line">				<span class="comment">//5,8,4,2,6,7</span></span><br><span class="line">				<span class="comment">//5,4,8,2,6,7</span></span><br><span class="line">				<span class="comment">//5,4,2,8,6,7</span></span><br><span class="line">				<span class="comment">//5,4,2,6,8,7</span></span><br><span class="line">				<span class="comment">//5,4,2,6,7,8</span></span><br><span class="line">				<span class="comment">//4,5,2,6,7,8</span></span><br><span class="line">				<span class="comment">//4,2,5,6,7,8</span></span><br><span class="line">				<span class="comment">//4,2,5,6,7,8</span></span><br><span class="line">				<span class="comment">//4,2,5,6,7,8</span></span><br><span class="line">				<span class="comment">//4,2,5,6,7,8</span></span><br><span class="line">				<span class="comment">//2,4,5,6,7,8		</span></span><br><span class="line"><span class="comment">//冒泡排序就是这样，anArray[i]与anArray[i + 1]向下依次比较，</span></span><br><span class="line"><span class="comment">//大的值放在右侧，小的值放在左侧，依次下去。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> anArray[<span class="number">10</span>] = &#123; <span class="number">26</span>, <span class="number">73</span>, <span class="number">48</span>, <span class="number">42</span>, <span class="number">95</span>, <span class="number">16</span>, <span class="number">80</span>, <span class="number">27</span>, <span class="number">12</span>, <span class="number">34</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>, num = <span class="number">0</span>;</span><br><span class="line">num = <span class="keyword">sizeof</span>(anArray) / <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, num);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num - <span class="number">1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; num - <span class="number">1</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (anArray[j] &gt; anArray[j + <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                temp = anArray[j];</span><br><span class="line">                anArray[j] = anArray[j + <span class="number">1</span>];</span><br><span class="line">                anArray[j + <span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>选择排序</p>
+<p>两个相邻的值进行比较，如果从小到大排序，如果第一个值比第二个值大，则记录较小值的下标，第二次比较，较小值和后续的值进行比较，始终记录较小值的下标，一轮比较完毕，记录的较小值和下标为0的元素进行交换，第二轮则和下标为1的元素交换。依次类推。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> anArray[<span class="number">6</span>] = &#123;<span class="number">8</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">7</span>&#125;;</span><br><span class="line">				<span class="comment">//2,5,4,8,6,7</span></span><br><span class="line">				<span class="comment">//2,4,5,8,6,7</span></span><br><span class="line">				<span class="comment">//2,4,5,8,6,7</span></span><br><span class="line">				<span class="comment">//2,4,5,6,8,7</span></span><br><span class="line">				<span class="comment">//2,4,5,6,7,8		</span></span><br><span class="line"><span class="comment">//选择排序就是这样，默认anArray[0]为最小值，</span></span><br><span class="line"><span class="comment">//后面依次用anArray[0]这个变量的值与后面别的下标变量的值进行比较，</span></span><br><span class="line"><span class="comment">//如果中间出现比默认的变量值小，则将它倆进行交换，</span></span><br><span class="line"><span class="comment">//这样始终保证默认的最小下标变量都是真正拥有最小值的变量，</span></span><br><span class="line"><span class="comment">//此时一轮结束，下一轮时将默认变量改为anArray[i + 1]，然后继续向后比较交换。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> anArray[<span class="number">10</span>] = &#123; <span class="number">26</span>, <span class="number">73</span>, <span class="number">48</span>, <span class="number">42</span>, <span class="number">95</span>, <span class="number">16</span>, <span class="number">80</span>, <span class="number">27</span>, <span class="number">12</span>, <span class="number">34</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>, num = <span class="number">0</span>;</span><br><span class="line">num = <span class="keyword">sizeof</span>(anArray) / <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, num);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num - <span class="number">1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        Max = i;					<span class="comment">//默认的最大变量为第一项0</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; num; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (anArray[Max] &lt; anArray[j + <span class="number">1</span>])<span class="comment">//用默认的最大变量的值比较下一项变量的值</span></span><br><span class="line">            &#123;</span><br><span class="line">                Max = j + <span class="number">1</span>;				<span class="comment">//将最大的变量的下标赋给Max</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == num - <span class="number">1</span>)				<span class="comment">//确认一轮都比较完毕</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = <span class="number">0</span>;				<span class="comment">//开始进行交换</span></span><br><span class="line">                temp = anArray[Max];</span><br><span class="line">                anArray[Max] = anArray[i];</span><br><span class="line">                anArray[i] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>二分查找法</p>
+<p>二分查找也叫折半查找，折半查找要求线性且顺序存储结构。</p>
+<p>记录最小值的下标为左值，记录最大值的下标为右值，最小值的下标加上最大值的下标除以2得到中间值下标，如果中间值比查找值大则右值下标更新为中间值下标<code>-1</code>，如果中间值比查找值小则左值下标更新为中间值下标<code>+1</code>。如果中间值和查找值相等则表示找到了，否则依次类推，直到找完也找不到为止，当左值等于右值时，所有元素查找完毕。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">首先需要数组内的所有元素值按从大到小或从小到大排列好，然后才能使用二分查找法</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> anArray[<span class="number">10</span>] = &#123; <span class="number">26</span>, <span class="number">73</span>, <span class="number">48</span>, <span class="number">42</span>, <span class="number">95</span>, <span class="number">16</span>, <span class="number">80</span>, <span class="number">27</span>, <span class="number">12</span>, <span class="number">34</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">0</span>, num = <span class="number">0</span>;</span><br><span class="line">    num = <span class="keyword">sizeof</span>(anArray) / <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, num);</span><br><span class="line">    <span class="comment">//冒泡排序</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num - <span class="number">1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; num - <span class="number">1</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (anArray[j] &gt; anArray[j + <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                temp = anArray[j];</span><br><span class="line">                anArray[j] = anArray[j + <span class="number">1</span>];</span><br><span class="line">                anArray[j + <span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//下面是二分查找法</span></span><br><span class="line">    <span class="keyword">int</span> Max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> Min = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> Mid = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> Find = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;输入要查找的值\r\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;Find);</span><br><span class="line">    Max = num;</span><br><span class="line">    Min = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (Min + Max) / <span class="number">2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        Mid = (Max + Min) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (anArray[Min] == Find)		</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;找到了\r\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (anArray[Max] == Find)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;找到了\r\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (anArray[Mid] == Find)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;找到了\r\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (Max == Min + <span class="number">1</span> &amp;&amp; (anArray[Max] != Find || anArray[Min] != Find))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;你要查找的数不存在\r\n&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (anArray[Mid] &gt; Find)</span><br><span class="line">        &#123;</span><br><span class="line">            Max = Mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (anArray[Mid] &lt; Find)</span><br><span class="line">        &#123;</span><br><span class="line">            Min = Mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h4 id="二维数组的定义及初始化"><a href="#二维数组的定义及初始化" class="headerlink" title="二维数组的定义及初始化"></a>二维数组的定义及初始化</h4>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老铁的打赏！滚来滚去……~(～o￣▽￣)～o 。。。滚来滚去……o～(＿△＿o～) ~。。。<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Typora</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">冒泡</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">查找</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/08/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2021/03/05/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">C语言第六课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E7%94%B1%E6%9D%A5%E3%80%81%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">数组的由来、定义及初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E4%BC%A0%E5%8F%82"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">数组的传参</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%92%E6%B3%A1%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E5%92%8C%E6%9F%A5%E6%89%BE"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">冒泡、选择排序和查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">二维数组的定义及初始化</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+      <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'true' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  new Valine({
+      // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+      app_id: 'Jh0QTrhSVRt87AyX9X876oT1-MdYXbMMI',
+      app_key: 'mMvMrsEofuM5CLXbAlA88AU0',
+      placeholder: '有话要说？'
+    });
+</script>
+    
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -224,9 +427,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
