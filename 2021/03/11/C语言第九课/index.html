@@ -7,20 +7,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>输入输出、数据类型 | kdeightx</title>
+  <title>字符串 | kdeightx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C语言第三课C语言简史 1950年欧美计算机学家合力推出了ALGOL算法语言  1958年ACM小组（美国计算机协会）和联邦德国的应用数学和力学协会（GAMM）在苏黎世把他们关于算法表示法的建议综合为一种编程语言，命名为IAL，后改为AIGOL58。">
+  <meta name="description" content="C语言第九课（接第六课）C语言标准常用的编译器有MSVC、GCC、CLANG。 现在的C标准有C89、C99、C11、C17、C23  标准的不同比如用C89的VC6里面定义变量必须再最前面定义">
 <meta property="og:type" content="article">
-<meta property="og:title" content="输入输出、数据类型">
-<meta property="og:url" content="http://example.com/2021/03/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E8%AF%BE/index.html">
+<meta property="og:title" content="字符串">
+<meta property="og:url" content="http://example.com/2021/03/11/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/index.html">
 <meta property="og:site_name" content="kdeightx">
-<meta property="og:description" content="C语言第三课C语言简史 1950年欧美计算机学家合力推出了ALGOL算法语言  1958年ACM小组（美国计算机协会）和联邦德国的应用数学和力学协会（GAMM）在苏黎世把他们关于算法表示法的建议综合为一种编程语言，命名为IAL，后改为AIGOL58。">
+<meta property="og:description" content="C语言第九课（接第六课）C语言标准常用的编译器有MSVC、GCC、CLANG。 现在的C标准有C89、C99、C11、C17、C23  标准的不同比如用C89的VC6里面定义变量必须再最前面定义">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-03T02:12:54.185Z">
-<meta property="article:modified_time" content="2021-03-05T08:59:00.179Z">
+<meta property="article:published_time" content="2021-03-11T02:53:36.528Z">
+<meta property="article:modified_time" content="2021-03-11T08:31:38.996Z">
 <meta property="article:author" content="芝士的力量">
-<meta property="article:tag" content="IDE">
-<meta property="article:tag" content="数据类型">
+<meta property="article:tag" content="编码">
+<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="C标准">
+<meta property="article:tag" content="cppreference.com">
+<meta property="article:tag" content="宽字符">
+<meta property="article:tag" content="编译器">
+<meta property="article:tag" content="ASCII编码表">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="kdeightx" type="application/atom+xml">
@@ -147,20 +152,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C语言第三课" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-C语言第九课" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      输入输出、数据类型
+      字符串
     </h1>
   
 
         
-        <a href="/2021/03/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-03T02:12:54.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-03</time>
+        <a href="/2021/03/11/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-03-11T02:53:36.528Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-11</time>
 </a>
         
       </header>
@@ -168,57 +173,49 @@
     <div class="article-entry" itemprop="articleBody">
       
 	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
-        <h1 id="C语言第三课"><a href="#C语言第三课" class="headerlink" title="C语言第三课"></a>C语言第三课</h1><h2 id="C语言简史"><a href="#C语言简史" class="headerlink" title="C语言简史"></a>C语言简史</h2><ul>
-<li><p>1950年欧美计算机学家合力推出了ALGOL算法语言</p>
-</li>
-<li><p>1958年ACM小组（美国计算机协会）和联邦德国的应用数学和力学协会（GAMM）在苏黎世把他们关于算法表示法的建议综合为一种编程语言，命名为IAL，后改为AIGOL58。</p>
+        <h1 id="C语言第九课（接第六课）"><a href="#C语言第九课（接第六课）" class="headerlink" title="C语言第九课（接第六课）"></a>C语言第九课（接第六课）</h1><h2 id="C语言标准"><a href="#C语言标准" class="headerlink" title="C语言标准"></a>C语言标准</h2><p>常用的编译器有MSVC、GCC、CLANG。</p>
+<p>现在的C标准有C89、C99、C11、C17、C23</p>
+<ul>
+<li><p>标准的不同比如用C89的VC6里面定义变量必须再最前面定义</p>
 <span id="more"></span>
-</li>
-<li><p>1960年图灵奖获得者艾伦佩利（<code>Alan J.Perlis</code>）发表了“算法语言Algol 60报告”，确定了程序设计语言ALGOL 60。</p>
-</li>
-<li><p>1963年英国剑桥大学推出了基于ALGOL 60的高级语言CPL语言。</p>
-</li>
-<li><p>1967年英国剑桥大学对CPL语言做了简化，推出了BCPL语言。</p>
-</li>
-<li><p>1970年美国贝尔实验室的肯-汤普森（<code>Ken Thompson</code>）以BCPL语言为基础推出了B语言（取BCPL的第一个字母）。并用B语言编写了第一个UNIX操作系统。</p>
-</li>
-<li><p>1972年贝尔实验室的丹尼斯-里奇（<code>D.M.Ritchie</code>）在B语言的基础上设计出了C语言。丹尼斯-里奇（<code>D.M.Ritchie</code>）和肯-汤普森（<code>Ken Thompson</code>）用C语言重写了UNIX系统。</p>
-</li>
-</ul>
-<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h5 id="IDE-1"><a href="#IDE-1" class="headerlink" title="IDE"></a>IDE</h5><p>集成开发环境，用于提供程序开发环境的应用程序。一般包括代码编辑器、编译器、调试器和图形用户界面等工具。集成了代码编写功能、分析功能、编译功能、调试功能等一体化的开发软件服务套。</p>
-<h5 id="创建第一个程序"><a href="#创建第一个程序" class="headerlink" title="创建第一个程序"></a>创建第一个程序</h5><p>stdio===&gt;standard input &amp; output===&gt;标准输入输出</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;hello word!&quot;</span>);   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Main函数"><a href="#Main函数" class="headerlink" title="Main函数"></a>Main函数</h3><h5 id="C语言的入口函数main"><a href="#C语言的入口函数main" class="headerlink" title="C语言的入口函数main"></a>C语言的入口函数main</h5><p>任何C语言程序只能有一个main函数，被称为主函数。</p>
-<h5 id="main函数的参数"><a href="#main函数的参数" class="headerlink" title="main函数的参数"></a>main函数的参数</h5><p>C语言标准中，main的参数有两个，一个十<code>int</code>类型的<code>argc</code>，一个是<code>char*</code>数组的<code>argv</code>。它们对应的是命令行传来的命令行传来的命令行参数。windows命令行通过<code>echo &amp;errorLeveI%</code>命令可以获取到return返回值。</p>
-<p><code>argc</code>该变量是用来统计<code>argv</code>数组里参数的数量。</p>
-<h2 id="MSDN、输入输出"><a href="#MSDN、输入输出" class="headerlink" title="MSDN、输入输出"></a>MSDN、输入输出</h2><ul>
-<li><p>MSDN</p>
-<p>微软提供的一种信息服务</p>
-<p>介绍各种编程技巧</p>
-</li>
-<li><p><code>printf</code></p>
-<p>格式化输出函数，向标准输出设备按规定格式输出。</p>
-<p>函数原型</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">printf</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *format[,argument]...)</span></span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>scanf</code></p>
-<p>从标准输入流中读取格式化数据。</p>
-<p>函数原型</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">scanf</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *format[,argument]...)</span></span>;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
-<li><p>数据类型</p>
-<p><code>byte</code>/<code>char</code>、<code>short</code>、<code>int</code>、<code>long</code>、<code>longlong</code>、<code>float</code>、<code>double</code>、<code>signed</code>、<code>unsigned</code></p>
-<p>1字节、2字节、4字节、4字节、8字节、4字节、8字节。</p>
-</li>
-<li><p><code>int</code>和<code>long</code>的区别</p>
-<p>早期的操作系统是16位，<code>int</code>用2字节表示，long用4字节表示。</p>
-<p>发展到32位操作系统，<code>int</code>用4字节表示，与long相同。</p>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//VC里面（用的是C89）</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;  ===============&gt;定义变量必须在前面</span><br><span class="line">    <span class="keyword">for</span>(a = <span class="number">0</span>;a &lt; <span class="number">10</span>;a++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//.....</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> b = <span class="number">0</span>;b &lt; <span class="number">10</span>;b++)====&gt;这里定义编译就无法通过</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//.....</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//想要在VC里面后面定义需要一个小技巧，就是加一个作用域</span></span><br><span class="line"><span class="keyword">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">for</span>(a = <span class="number">0</span>;a &lt; <span class="number">10</span>;a++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//.....</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#123;================&gt;加上这个作用域就可以在后面定义了</span><br><span class="line">        <span class="keyword">int</span> b; ======&gt;此时就可以编译通过</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//VS2013</span></span><br><span class="line"><span class="keyword">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(a = <span class="number">0</span>;a &lt; <span class="number">10</span>;a++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//.....</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> b = <span class="number">0</span>;b &lt; <span class="number">10</span>;b++)====&gt;这里定义编译正常通过</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//.....</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>最早的是C89。C17修复了C11的一些bug。C23目前还不清楚有哪些编译器使用，以后可能会有吧。</p>
+<p>另外就是，C标准更新很慢，不像别的，包括C++。</p>
+<p>查看C标准的网站是：<a target="_blank" rel="noopener" href="https://en.cppreference.com/w/">https://en.cppreference.com/w/</a></p>
+<ul>
+<li>编译器和C标准不一定相同</li>
 </ul>
+<p>编译器和vs这种集成开发环境是两个东西，虽然编译器是根据C标准来写的，但不同的编译器作者写的编译器依旧有不同。比如微软写的MSVC编译器里面不允许在定义数组的时候用变量来表示数组下标。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> count = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> ary[count] = &#123;<span class="number">0</span>&#125;;===========&gt;<span class="comment">//这种定义数组的方法C标准允许，但微软不允许，微软给出的解释就是容易出现bug或漏洞。</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过<code>stdint.h</code>这个头文件来固定变量大小，这样就可以使代码在不同编译器环境下依旧可以使用，实现跨版本跨平台使用。</li>
+</ul>
+<h2 id="ASCII编码表"><a href="#ASCII编码表" class="headerlink" title="ASCII编码表"></a>ASCII编码表</h2><p>一个字节有8位，一般用7位表示，第八位是符号位。</p>
+<p>也就是可以表示0~127个数。</p>
+<p>不同的国家和公司写自己的ASCII扩展这就导致了在不同的系统上显示不同的效果。</p>
+<p>后来为了解决例如汉字等别的语言问题，就提出了<code>多字节字符集(MBCS)</code></p>
+<p>中国做了一个标准<code>GB2312</code> 。后面扩展的就叫<code>GBKXXX</code></p>
+<p>两个字符表示一个汉字。</p>
+<p>为了解决不同国家需要不同的字符表，微软做了一个·Code Page·，这个代码页几乎包含了所有国家的字符代码。需要时选择自己国家的代码即可。</p>
+<p>后面又出现了万国编码：<code>Unicode编码</code>。</p>
+<p><code>Unicode</code>字符集包含所有国家的字符代码。</p>
+<p>但<code>Unicode</code>字符集有不好的地方，就是将所有国家的字符都用两个字节表示一个字符，例如中国的汉字，两个字符表示一个汉字，包括英文也是。对于英文这种只需要一个字符就可以表示，却在<code>Unicode</code>里用两个表示，这样极大的浪费了空间。</p>
+<p>现在用的最多的是<code>UTF-8编码</code></p>
+<h2 id="宽字节"><a href="#宽字节" class="headerlink" title="宽字节"></a>宽字节</h2><p>就是用Unicode编码显示的字符。</p>
+<blockquote>
+<p>注意：代码所用的字符编码要和文件字符编码一直，不然会出现乱码。</p>
+</blockquote>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>一连串的字符数组就是字符串，</p>
+<p>Pascal字符串：先在前面表示字符串长度，后面接字符串内容。</p>
+<p>C语言里不是这样，为了让计算机知道字符串结尾的位置，会在后面自动补一个0。</p>
+<p>如果是用宽字符（Unicode）来写，会在后面自动补两个0。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> string1[] = &#123;<span class="string">&quot;hello&quot;</span>&#125;;===========&gt;后面自动补一个<span class="number">0</span></span><br><span class="line"><span class="keyword">wchar_t</span> string2[<span class="number">5</span>] = &#123;<span class="string">L&quot;hello&quot;</span>&#125;;======&gt;这个<span class="keyword">wchar_t</span>和L表示Unicode编码。后面自动补两个<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -253,11 +250,31 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">IDE</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编码</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据类型</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C标准</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cppreference.com</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">宽字符</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">编译器</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ASCII编码表</a>
         		</li>
       		
 		</ul>
@@ -313,7 +330,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/03/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E8%AF%BE/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/11/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -327,18 +344,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/04/C%E8%AF%AD%E9%9F%B3%E7%AC%AC%E5%9B%9B%E8%AF%BE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          分支与循环
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/03/02/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">进制</div>
+    <a href="/2021/03/08/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数组</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -365,7 +373,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">C语言第三课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AE%80%E5%8F%B2"><span class="toc-number">1.1.</span> <span class="toc-text">C语言简史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDE"><span class="toc-number">1.2.</span> <span class="toc-text">IDE</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IDE-1"><span class="toc-number">1.2.0.0.1.</span> <span class="toc-text">IDE</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.2.0.0.2.</span> <span class="toc-text">创建第一个程序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Main%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">Main函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%85%A5%E5%8F%A3%E5%87%BD%E6%95%B0main"><span class="toc-number">1.2.1.0.1.</span> <span class="toc-text">C语言的入口函数main</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#main%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-number">1.2.1.0.2.</span> <span class="toc-text">main函数的参数</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MSDN%E3%80%81%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="toc-number">1.3.</span> <span class="toc-text">MSDN、输入输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text">数据类型</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE%EF%BC%88%E6%8E%A5%E7%AC%AC%E5%85%AD%E8%AF%BE%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">C语言第九课（接第六课）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E6%A0%87%E5%87%86"><span class="toc-number">1.1.</span> <span class="toc-text">C语言标准</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ASCII%E7%BC%96%E7%A0%81%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">ASCII编码表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%BD%E5%AD%97%E8%8A%82"><span class="toc-number">1.3.</span> <span class="toc-text">宽字节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.4.</span> <span class="toc-text">字符串</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
