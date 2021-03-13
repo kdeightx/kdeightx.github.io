@@ -7,17 +7,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/2 | kdeightx</title>
+  <title>预处理 | kdeightx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="kdeightx的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kdeightx">
-<meta property="og:url" content="http://example.com/archives/2021/02/index.html">
+  <meta name="description" content="C语言第十课编码(补充)123&#x2F;&#x2F;GBK      41  41  C3  E3  00   &quot;AA你&quot;      &#x2F;&#x2F;英文问号：? 中文问号：？&#x2F;&#x2F;UNICODE  41  00  41  00  60  4F  00  00  	&quot;AA你&quot;&#x2F;&#x2F;UNICODE编码两个字节0结尾，每个字符用两个字节表示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="预处理">
+<meta property="og:url" content="http://example.com/2021/03/13/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/index.html">
 <meta property="og:site_name" content="kdeightx">
-<meta property="og:description" content="kdeightx的博客">
+<meta property="og:description" content="C语言第十课编码(补充)123&#x2F;&#x2F;GBK      41  41  C3  E3  00   &quot;AA你&quot;      &#x2F;&#x2F;英文问号：? 中文问号：？&#x2F;&#x2F;UNICODE  41  00  41  00  60  4F  00  00  	&quot;AA你&quot;&#x2F;&#x2F;UNICODE编码两个字节0结尾，每个字符用两个字节表示">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-13T02:05:54.012Z">
+<meta property="article:modified_time" content="2021-03-13T07:57:36.500Z">
 <meta property="article:author" content="芝士的力量">
-<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="编码">
+<meta property="article:tag" content="常用字符串函数">
+<meta property="article:tag" content="预处理">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="kdeightx" type="application/atom+xml">
@@ -144,140 +148,294 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-C语言第十课" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      预处理
+    </h1>
+  
+
+        
+        <a href="/2021/03/13/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-03-13T02:05:54.012Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-13</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h1 id="C语言第十课"><a href="#C语言第十课" class="headerlink" title="C语言第十课"></a>C语言第十课</h1><h2 id="编码-补充"><a href="#编码-补充" class="headerlink" title="编码(补充)"></a>编码(补充)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//GBK      41  41  C3  E3  00   &quot;AA你&quot;      //英文问号：? 中文问号：？</span></span><br><span class="line"><span class="comment">//UNICODE  41  00  41  00  60  4F  00  00  	&quot;AA你&quot;</span></span><br><span class="line"><span class="comment">//UNICODE编码两个字节0结尾，每个字符用两个字节表示</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>GBK编码的函数只能显示GBK编码的参数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s1[] = &#123;<span class="string">&quot;AA你&quot;</span>&#125;;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,s1);</span><br></pre></td></tr></table></figure>
+
+<p>Unicode编码只能显示Unicode编码参数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">wchar_t</span> s1[] = &#123;<span class="string">L&quot;AA你&quot;</span>&#125;;</span><br><span class="line">wprintf(<span class="string">L&quot;%s\n&quot;</span>,s1);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果代码是Unicode，文件也是Unicode，但在调试的时候依旧是乱码，那是因为终端不是Unicode。</p>
+</blockquote>
+<h2 id="常用字符串函数-补充"><a href="#常用字符串函数-补充" class="headerlink" title="常用字符串函数(补充)"></a>常用字符串函数(补充)</h2><p><code>fflush(stdin)</code>只能清空字符串缓存，不能清空字符缓存。</p>
+<p><code>scanf</code>函数与<code>putchar</code>用时会将空格作为下一个元素输出。如果和<code>printf</code>用时，空格会作为格式而不是字符输出。</p>
+<p><code>getchar()</code>函数是用来获取一个字符，从输入里获取(比如终端输入，一般指从键盘输入)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getchar();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">10</span>] = &#123; <span class="string">&quot;\0&quot;</span> &#125;;</span><br><span class="line">    <span class="keyword">char</span> b[<span class="number">10</span>] = &#123; <span class="string">&quot;\0&quot;</span> &#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;输入第一串字符串\r\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, &amp;a);			</span><br><span class="line"><span class="comment">//如果此时输入的字符串中有空格，则不会有下一个scanf输入，</span></span><br><span class="line"><span class="comment">//而是将空格后的字符串作为第二串字符输出</span></span><br><span class="line">    </span><br><span class="line">	fflush(<span class="built_in">stdin</span>);</span><br><span class="line"><span class="comment">//这个可以用来清空字符串缓存</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;输入第二串字符串\r\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, &amp;b);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\r\n&quot;</span>, a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\r\n&quot;</span>, b);</span><br><span class="line"><span class="comment">//printf输出有一个问题就是不会将字符串中空格作为字符输出，而是将它作为截断</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数fgetc-stdin-文件指针"><a href="#函数fgetc-stdin-文件指针" class="headerlink" title="函数fgetc(stdin(文件指针))"></a>函数<code>fgetc</code>(stdin(文件指针))</h4><p>函数返回值是读到的字符，如果不能读到字符，那会返回<code>EOF</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fgetc</span><span class="params">(FILE *stream)</span></span>;<span class="comment">//因为是get，所以括号内填stdin(标准输入)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数fgets-目标字符数组名，字符数量，stdin-文件指针"><a href="#函数fgets-目标字符数组名，字符数量，stdin-文件指针" class="headerlink" title="函数fgets(目标字符数组名，字符数量，stdin(文件指针))"></a>函数<code>fgets</code>(目标字符数组名，字符数量，stdin(文件指针))</h4><p>stdin位置表示获取的字符串源（stdin表示从键盘输入）</p>
+<p>每次读一个字符串，最多读一行，遇到第一个<code>\n</code>就会结束读取</p>
+<blockquote>
+<p><code>fgets()</code>这个函数会将空格作为字符而不是截断</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">10</span>];</span><br><span class="line">fgets(a,<span class="number">10</span>,<span class="built_in">stdin</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>stdin</code>是标准输入</p>
+</li>
+<li><p><code>stdout</code>是标准输出</p>
+</li>
+<li><p><code>stderr</code>是标准错误</p>
+</li>
+</ul>
+<h4 id="函数fputc-源字符，目标-文件指针"><a href="#函数fputc-源字符，目标-文件指针" class="headerlink" title="函数fputc(源字符，目标(文件指针))"></a>函数<code>fputc</code>(源字符，目标(文件指针))</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a;</span><br><span class="line">fputc(a,<span class="built_in">stdout</span>);<span class="comment">//因为是put，所以括号内填stdout(标准输出)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数fputs-源字符，目标-文件指针"><a href="#函数fputs-源字符，目标-文件指针" class="headerlink" title="函数fputs(源字符，目标(文件指针))"></a>函数<code>fputs</code>(源字符，目标(文件指针))</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">11</span>] = &#123;<span class="string">&quot;hello word&quot;</span>&#125;;<span class="comment">//这里要多一个元素给&#x27;\0&#x27;不然fputs会因为找不到&#x27;\0&#x27;而越界</span></span><br><span class="line"><span class="built_in">fputs</span>(a,<span class="built_in">stdout</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串函数例子"><a href="#字符串函数例子" class="headerlink" title="字符串函数例子"></a>字符串函数例子</h3><p>所有的宽字符用法一样，只不过注意输入输出的格式包括字符串本身都得是Unicode，不然要么报错，要么乱码，要么不显示。</p>
+<h4 id="函数strcpy、strncpy、wcscpy、wcsncpy使用例子"><a href="#函数strcpy、strncpy、wcscpy、wcsncpy使用例子" class="headerlink" title="函数strcpy、strncpy、wcscpy、wcsncpy使用例子"></a>函数<code>strcpy</code>、<code>strncpy</code>、<code>wcscpy</code>、<code>wcsncpy</code>使用例子</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s1[<span class="number">260</span>] = &#123;<span class="string">&quot;hello word你好&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> s2[<span class="number">260</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//字符串拷贝</span></span><br><span class="line">fgets(s2,<span class="number">260</span>,<span class="built_in">stdin</span>);	<span class="comment">//输入也要控制大小</span></span><br><span class="line"><span class="built_in">strcpy</span>(s1,s2);			<span class="comment">//s2拷贝到S1，如果s1不够大，就会越界。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">strncpy</span>(s1,s2,<span class="number">3</span>);		<span class="comment">//指定拷贝字符长度，此处是拷贝三个字符   注意：只拷贝，不补0</span></span><br><span class="line">s1[<span class="number">3</span>] = <span class="string">&quot;\0&quot;</span>;			<span class="comment">//手动补0							！！！需要手动补0！！！！</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;s1:%s\n&quot;</span>,s1);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="函数strcat、strncat、wcscat、wcsncat使用例子"><a href="#函数strcat、strncat、wcscat、wcsncat使用例子" class="headerlink" title="函数strcat、strncat、wcscat、wcsncat使用例子"></a>函数<code>strcat</code>、<code>strncat</code>、<code>wcscat</code>、<code>wcsncat</code>使用例子</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s1[<span class="number">260</span>];</span><br><span class="line"><span class="keyword">char</span> s2[<span class="number">260</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//拼接字符串</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s2);			<span class="comment">//输入一个字符串到s2</span></span><br><span class="line"><span class="built_in">strcpy</span>(s1,s2);			<span class="comment">//将s2拷贝到s1</span></span><br><span class="line"><span class="built_in">strcat</span>(s1,<span class="string">&quot;hello&quot;</span>);		<span class="comment">//将hello拼接到s1后面					拼接会自动补0</span></span><br><span class="line">						<span class="comment">//！！！注意：拼接的s1一定要初始化，不能一个&#x27;\0&#x27;都没有	  ！！！</span></span><br><span class="line"><span class="built_in">strncat</span>(s1,<span class="string">&quot;hello&quot;</span>,<span class="number">2</span>);	<span class="comment">//指定拼接字符长度，此处是拷贝两个字符    </span></span><br><span class="line">						</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;s1:%s\n&quot;</span>,s1);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="函数strlen、wcslen使用例子"><a href="#函数strlen、wcslen使用例子" class="headerlink" title="函数strlen、wcslen使用例子"></a>函数<code>strlen</code>、<code>wcslen</code>使用例子</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s1[<span class="number">260</span>] = &#123;<span class="string">&quot;hello word&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> s2[<span class="number">260</span>];</span><br><span class="line"><span class="comment">//求字符串长度</span></span><br><span class="line"><span class="keyword">int</span> len = <span class="built_in">strlen</span>(s1);			<span class="comment">//不包含&#x27;\0&#x27;</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;s1 len:%s\n&quot;</span>,len);			</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="函数strcmp、wcscmp使用例子"><a href="#函数strcmp、wcscmp使用例子" class="headerlink" title="函数strcmp、wcscmp使用例子"></a>函数<code>strcmp</code>、<code>wcscmp</code>使用例子</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符串比较 相等 大于 小于</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%259s&quot;</span>,s1);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%259s&quot;</span>,s2);</span><br><span class="line"><span class="keyword">int</span> result = <span class="built_in">strcmp</span>(s1,s2);			</span><br><span class="line"><span class="comment">//比较两个字符串的ASCII码大小，从第一个字符开始比较，如果相等，比较下一个字符，</span></span><br><span class="line"><span class="comment">//遇到不相等的判断ASCII码数值哪个大，左边的大(s1 &gt; s2)，返回差值(差值一定大于0)，右边的大(s1 &lt; s2),返回差值(差值一定小于0)</span></span><br><span class="line"><span class="keyword">if</span>(result == <span class="number">0</span>)						<span class="comment">//大于返回0</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;s1相等s2\r\n&quot;</span>);    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(result &lt; <span class="number">0</span>)					<span class="comment">//小于返回-1</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;s1小于s2\r\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;s1大于s2\r\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="函数strlwr、wcslwr使用例子"><a href="#函数strlwr、wcslwr使用例子" class="headerlink" title="函数strlwr、wcslwr使用例子"></a>函数<code>strlwr</code>、<code>wcslwr</code>使用例子</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//转换小写</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%259s&quot;</span>,s1);</span><br><span class="line">strlwr(s1);				<span class="comment">//只判断&#x27;A-Z&#x27; &#x27;a-z&#x27;其他字符不判断</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;s1:%s\n&quot;</span>,s1);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="函数strupr、wcsupr使用例子"><a href="#函数strupr、wcsupr使用例子" class="headerlink" title="函数strupr、wcsupr使用例子"></a>函数<code>strupr</code>、<code>wcsupr</code>使用例子</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//转换大写</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%259s&quot;</span>,s1);</span><br><span class="line">strupr(s1);				<span class="comment">//只判断&#x27;A-Z&#x27; &#x27;a-z&#x27;其他字符不判断</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;s1:%s\n&quot;</span>,s1);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="函数strstr、wcsstr使用例子"><a href="#函数strstr、wcsstr使用例子" class="headerlink" title="函数strstr、wcsstr使用例子"></a>函数<code>strstr</code>、<code>wcsstr</code>使用例子</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//子串（一个大的字符串里面有没有小的字符串）are you ok？   you</span></span><br><span class="line"><span class="keyword">char</span> s2[<span class="number">260</span>];</span><br><span class="line">fgets(s2,<span class="number">260</span>,<span class="built_in">stdin</span>);				<span class="comment">//注意不要用scanf，不然字符串空格会当做截断</span></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strstr</span>(s1,<span class="string">&quot;you&quot;</span>) == <span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;没有you字符串\r\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;找到：%s\n&quot;</span>,<span class="built_in">strstr</span>(s1,<span class="string">&quot;you&quot;</span>));		<span class="comment">//输出结果是you ok，后面的字符串全部输出</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="宽字符-补充"><a href="#宽字符-补充" class="headerlink" title="宽字符(补充)"></a>宽字符(补充)</h2><p>用下面这个函数告诉计算机，下面的代码是宽字符代码。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setlocale(LC_ALL,<span class="string">&quot;chinese&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>下面的是<code>printf</code>通用版，微软用这类函数来实现GBK和Unicode之间自动转换。方便程序员使用。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_tprintf();<span class="comment">//当遇到Unicode编码时自动转为Unicode版本，否则默认GBK版本。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h2><h3 id="无参宏"><a href="#无参宏" class="headerlink" title="无参宏"></a>无参宏</h3><p>做简单的查找替换工作</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个宏</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAP_SIZE 8			<span class="comment">//宏名大写，为了和程序内的变量区分</span></span></span><br><span class="line"><span class="comment">//为了增加代码的维护性</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="有参宏"><a href="#有参宏" class="headerlink" title="有参宏"></a>有参宏</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MY_ADD(a,b) a+b</span></span><br><span class="line"><span class="comment">//有参宏相对于函数而言虽然效率高，但维护性低，成本高(占用空间大)</span></span><br><span class="line"><span class="comment">//如果宏是一个数组，那么就容易占用大量的资源</span></span><br><span class="line"><span class="comment">//因为宏它只做简单的替换工作，如果在做算术运算的时候因为优先级问题，可能会导致出错，而且不容易发现</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,MY_ADD);<span class="comment">//如果a为3，b为&quot;hello&quot;</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="number">3</span> + <span class="string">&quot;hello&quot;</span>);</span><br><span class="line"><span class="comment">//替换工作也可能导致替换的是字符，但编译却通过，这就很难发现问题所在</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老铁的打赏！滚来滚去……~(～o￣▽￣)～o 。。。滚来滚去……o～(＿△＿o～) ~。。。<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/28/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-02-28T04:01:07.964Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/28/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Hexo博客基本使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/28/yilia%E5%AE%8C%E5%96%84/" class="archive-article-date">
-  	<time datetime="2021-02-27T23:05:09.595Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/28/yilia%E5%AE%8C%E5%96%84/">yilia主题完善</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yilia主题配置</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/27/Typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2021-02-27T05:41:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/27/Typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">Typora快捷键</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Typora</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编码</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">常用字符串函数</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">预处理</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/13/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2021/03/11/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字符串</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">C语言第十课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A0%81-%E8%A1%A5%E5%85%85"><span class="toc-number">1.1.</span> <span class="toc-text">编码(补充)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0-%E8%A1%A5%E5%85%85"><span class="toc-number">1.2.</span> <span class="toc-text">常用字符串函数(补充)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fgetc-stdin-%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">函数fgetc(stdin(文件指针))</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fgets-%E7%9B%AE%E6%A0%87%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E5%90%8D%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%95%B0%E9%87%8F%EF%BC%8Cstdin-%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">函数fgets(目标字符数组名，字符数量，stdin(文件指针))</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fputc-%E6%BA%90%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%9B%AE%E6%A0%87-%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">函数fputc(源字符，目标(文件指针))</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fputs-%E6%BA%90%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%9B%AE%E6%A0%87-%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">函数fputs(源字符，目标(文件指针))</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.1.</span> <span class="toc-text">字符串函数例子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0strcpy%E3%80%81strncpy%E3%80%81wcscpy%E3%80%81wcsncpy%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">函数strcpy、strncpy、wcscpy、wcsncpy使用例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0strcat%E3%80%81strncat%E3%80%81wcscat%E3%80%81wcsncat%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">函数strcat、strncat、wcscat、wcsncat使用例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0strlen%E3%80%81wcslen%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">函数strlen、wcslen使用例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0strcmp%E3%80%81wcscmp%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">函数strcmp、wcscmp使用例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0strlwr%E3%80%81wcslwr%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">函数strlwr、wcslwr使用例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0strupr%E3%80%81wcsupr%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.1.6.</span> <span class="toc-text">函数strupr、wcsupr使用例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0strstr%E3%80%81wcsstr%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.1.7.</span> <span class="toc-text">函数strstr、wcsstr使用例子</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%BD%E5%AD%97%E7%AC%A6-%E8%A1%A5%E5%85%85"><span class="toc-number">1.3.</span> <span class="toc-text">宽字符(补充)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">预处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%8F%82%E5%AE%8F"><span class="toc-number">1.4.1.</span> <span class="toc-text">无参宏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E5%8F%82%E5%AE%8F"><span class="toc-number">1.4.2.</span> <span class="toc-text">有参宏</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+      <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'true' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  new Valine({
+      // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+      app_id: 'Jh0QTrhSVRt87AyX9X876oT1-MdYXbMMI',
+      app_key: 'mMvMrsEofuM5CLXbAlA88AU0',
+      placeholder: '有话要说？'
+    });
+</script>
+    
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -300,8 +458,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
