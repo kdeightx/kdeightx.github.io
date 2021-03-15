@@ -7,17 +7,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: Typora | kdeightx</title>
+  <title>指针 | kdeightx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="kdeightx的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kdeightx">
-<meta property="og:url" content="http://example.com/tags/Typora/index.html">
+  <meta name="description" content="C语言第十一课宏(补充)宏只做简单的替换，任何函数或C语言关键词或者其他什么的不讲究，不会出现替换if...else就报错的情况，当替换复杂的判断或循环函数时，用\斜杠来连接下一行。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指针">
+<meta property="og:url" content="http://example.com/2021/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/index.html">
 <meta property="og:site_name" content="kdeightx">
-<meta property="og:description" content="kdeightx的博客">
+<meta property="og:description" content="C语言第十一课宏(补充)宏只做简单的替换，任何函数或C语言关键词或者其他什么的不讲究，不会出现替换if...else就报错的情况，当替换复杂的判断或循环函数时，用\斜杠来连接下一行。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-15T08:44:43.646Z">
+<meta property="article:modified_time" content="2021-03-15T12:30:42.908Z">
 <meta property="article:author" content="芝士的力量">
-<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="宏">
+<meta property="article:tag" content="变量">
+<meta property="article:tag" content="指针">
+<meta property="article:tag" content="转义问题">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="kdeightx" type="application/atom+xml">
@@ -144,64 +149,281 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-C语言第十一课" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/27/Typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2021-02-27T05:41:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/27/Typora%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">Typora快捷键</a>
+    <h1 class="article-title" itemprop="name">
+      指针
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-03-15T08:44:43.646Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h1 id="C语言第十一课"><a href="#C语言第十一课" class="headerlink" title="C语言第十一课"></a>C语言第十一课</h1><h2 id="宏-补充"><a href="#宏-补充" class="headerlink" title="宏(补充)"></a>宏(补充)</h2><p>宏只做简单的替换，任何函数或C语言关键词或者其他什么的不讲究，不会出现替换<code>if...else</code>就报错的情况，当替换复杂的判断或循环函数时，用<code>\</code>斜杠来连接下一行。</p>
+<span id="more"></span>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OUTPUT for(int i = 0;i &lt; 10;i++)\</span></span><br><span class="line">&#123;\</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;hello\r\n&quot;</span>);\</span><br><span class="line">&#125;           <span class="comment">//==============&gt;最后一行建议不加\，如果加，就要空一行</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OUTPUT for(int i = 0;i &lt; 10;i++)\</span></span><br><span class="line">&#123;\</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;hello\r\n&quot;</span>);\</span><br><span class="line">&#125;\           <span class="comment">//==============&gt;最后一行建议不加\，如果加，就要空一行</span></span><br><span class="line">            <span class="comment">//==============&gt;空这一行。</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>C语言会将<code>\</code>的下一行作为宏要替换的内容。</p>
+</blockquote>
+<h2 id="字符和字符串的转义问题"><a href="#字符和字符串的转义问题" class="headerlink" title="字符和字符串的转义问题"></a>字符和字符串的转义问题</h2><ul>
+<li>字符转义</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> ch = <span class="number">1</span>;       <span class="comment">//显示大王</span></span><br><span class="line">char ch = &#x27;\x1&#x27;;   //显示大王。表示十六进制的1。ASCII码第1位是大王图标。这就是字符的转义</span><br><span class="line">\===&gt;这个斜杠是为了告诉计算机后面的是转义字符。x1中的x是十六进制的意思</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字符串转义</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> ary[] = &#123;<span class="string">&quot;hello\x1&quot;</span>&#125;;<span class="comment">//将&#x27;\x1&#x27;作为字符串的一部分写在里面</span></span><br><span class="line"><span class="comment">//注意这里的&#x27;x1&#x27;不要写十进制，如果要显示&#x27;A&#x27;，它的十六进制是65，写&#x27;\65&#x27;的话，计算机只会将&#x27;\6&#x27;计算在内，&#x27;5&#x27;会当做普通字符输出</span></span><br><span class="line"><span class="keyword">char</span> ary[] = &#123;<span class="string">&quot;hello\65&quot;</span>&#125;;=====&gt;输出的结果是<span class="string">&quot;hello5&quot;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结，在字符串中使用转义字符的时候需要加<code>\</code>，并且后面要用十六进制的ASCII码，即使是输出<code>\</code>也要找到ASCII表里<code>\</code>的ASCII码。</p>
+<p><code>\</code>就是用来告诉计算机后面的是转义字符。这是语法规定。</p>
+</blockquote>
+<h2 id="变量的生命周期及作用域"><a href="#变量的生命周期及作用域" class="headerlink" title="变量的生命周期及作用域"></a>变量的生命周期及作用域</h2><h3 id="变量分类"><a href="#变量分类" class="headerlink" title="变量分类"></a>变量分类</h3><h4 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h4><p>生命周期以函数单位，进入函数生命周期开始，调用返回生命周期结束。</p>
+<p>租房子          节省空间，通过参数传递需要的数量</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i++)<span class="comment">//这里定义的i变量只能在for函数内使用，出了这个函数就被释放了</span></span><br><span class="line">	&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h4><p>生命周期以程序为单位，进入程序运行生命周期开始，程序结束生命周期结束</p>
+<p>买房子          占用空间，传递数据方便，容易出bug</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;<span class="comment">//这个变量因为在函数外定义，直到程序结束才会被释放，这种变量就是全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h3><h4 id="程序作用域、函数作用域、块作用域"><a href="#程序作用域、函数作用域、块作用域" class="headerlink" title="程序作用域、函数作用域、块作用域"></a>程序作用域、函数作用域、块作用域</h4><p>块作用域</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;		<span class="comment">//两个大括号之间就是一个块作用域</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">extern</span> <span class="keyword">int</span> block1;<span class="comment">//向前声明，可以重复写向前声明</span></span><br><span class="line">	<span class="comment">//通过extern这个关键词来告诉计算机已经定义了block1这个变量，如果没有这个变量却依旧用这个骗计算机，计算机会报错</span></span><br><span class="line">	<span class="comment">//原因是计算机会扫描确定是否真的有这个变量</span></span><br><span class="line">	block1 = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> block1 = <span class="number">1</span>;</span><br><span class="line">	block1 = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数作用域</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fun</span><span class="params">()</span><span class="comment">//在函数体内部这块区域叫函数作用域</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//在这里面定义的变量只能在这个函数内使用，出了这个函数，这个变量就被释放了。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序作用域</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> block1 = <span class="number">0</span>;<span class="comment">//从程序运行开始到程序运行结束才被释放，这就会程序作用域</span></span><br><span class="line"><span class="comment">//全局变量的作用域就是程序作用域</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> block2 = <span class="number">0</span>;<span class="comment">//这个变量的作用域基本上也可以算程序作用域，因为它在main函数内，却在main函数里面其他的函数外</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h3><p>这是取址符，用来取变量地址。</p>
+<h3 id><a href="#" class="headerlink" title="*"></a>*</h3><p>这是取值符，用来取指针变量所指向的地址的内容。</p>
+<h3 id="定义指针"><a href="#定义指针" class="headerlink" title="定义指针"></a>定义指针</h3><p>先用类型说明符来说明，再用指针的<code>*</code>符号加变量名</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p = <span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">//NULL表示空，也等于0</span></span><br></pre></td></tr></table></figure>
+
+<p>将变量地址传递给指针</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num1 = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> *p = <span class="literal">NULL</span>;</span><br><span class="line">p = &amp;num1;<span class="comment">//这种方式和下面这种方式一样</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> num2 = <span class="number">8</span>;</span><br><span class="line"><span class="keyword">int</span> *q = &amp;num2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> num3[<span class="number">10</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">p = num3;<span class="comment">//这里没有加&amp;是因为数组名就是地址</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>注意：如果用<code>void *p</code>来接受指针这可以接受各种类型的指针，这就增加了指针的通用性。</p>
+<p>指针大小为4个字节(地址)</p>
+<p><code>void *</code>任意类型</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fun</span><span class="params">(<span class="keyword">void</span> *p, <span class="keyword">int</span> count)</span><span class="comment">//这里用void*指针接受任意类型指针</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *q = (<span class="keyword">int</span>*)p;<span class="comment">//这里将传过来的并且用void*指针接受的指针地址，强转为int*指针。</span></span><br><span class="line">    				 <span class="comment">//这样转不会出现越界问题</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, (<span class="keyword">int</span>*)q[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">5</span>] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">char</span> b[<span class="number">5</span>] = &#123; <span class="string">&quot;hello&quot;</span> &#125;;</span><br><span class="line">    Fun(a, <span class="number">5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里补充一个函数，<code>memcpy(目标指针，源指针，大小)</code>这个库函数是用来拷贝内存的</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memcpy</span><span class="params">( <span class="keyword">void</span> *dest, <span class="keyword">const</span> <span class="keyword">void</span> *src, <span class="keyword">size_t</span> count )</span></span>;<span class="comment">//细节看文档</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fun</span><span class="params">(<span class="keyword">void</span> *p,<span class="keyword">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="built_in">memcpy</span>(num,p,size);<span class="comment">//拷贝内存,比如p为数组指针，size就是p数组的大小，num就是要拷贝到的目标指针。这个目标指针也得和p一个类型一个大小，这样才能接受。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意！！！"><a href="#注意！！！" class="headerlink" title="注意！！！"></a>注意！！！</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fun1</span><span class="params">(<span class="keyword">void</span> *p, <span class="keyword">int</span> count)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ((<span class="keyword">int</span>*)p)[i]);<span class="comment">//可以对形参直接操作，但要注意加括号！！！</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">5</span>] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">char</span> b[<span class="number">5</span>] = &#123; <span class="string">&quot;hello&quot;</span> &#125;;</span><br><span class="line">    Fun1(a, <span class="number">5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老铁的打赏！滚来滚去……~(～o￣▽￣)～o 。。。滚来滚去……o～(＿△＿o～) ~。。。<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Typora</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">宏</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">变量</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">指针</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">转义问题</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2021/03/13/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">预处理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">C语言第十一课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8F-%E8%A1%A5%E5%85%85"><span class="toc-number">1.1.</span> <span class="toc-text">宏(补充)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BD%AC%E4%B9%89%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">字符和字符串的转义问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%8A%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.</span> <span class="toc-text">变量的生命周期及作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.1.</span> <span class="toc-text">变量分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">全局变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.2.</span> <span class="toc-text">变量的作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">程序作用域、函数作用域、块作用域</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-number">1.4.</span> <span class="toc-text">指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#amp"><span class="toc-number">1.4.1.</span> <span class="toc-text">&amp;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.2.</span> <span class="toc-text">*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%8C%87%E9%92%88"><span class="toc-number">1.4.3.</span> <span class="toc-text">定义指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%81%EF%BC%81%EF%BC%81"><span class="toc-number">1.5.</span> <span class="toc-text">注意！！！</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+      <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'true' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  new Valine({
+      // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+      app_id: 'Jh0QTrhSVRt87AyX9X876oT1-MdYXbMMI',
+      app_key: 'mMvMrsEofuM5CLXbAlA88AU0',
+      placeholder: '有话要说？'
+    });
+</script>
+    
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -224,9 +446,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
