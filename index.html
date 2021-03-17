@@ -146,6 +146,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C语言第十三课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/">结构体、共用体、枚举</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-03-17T12:41:10.198Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C语言第十三课"><a href="#C语言第十三课" class="headerlink" title="C语言第十三课"></a>C语言第十三课</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">date</span>	//<span class="keyword">struct</span>是为了说明这是一个结构体类型，_<span class="title">date</span>是结构体名，可以不写</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;				<span class="comment">//结构体内部可以写多个不同类型的数据</span></span><br><span class="line">	<span class="keyword">char</span> b;				<span class="comment">//结构体的大小等于所有变量大小之和，但一般会不准，因为有系统优化对齐的原因。</span></span><br><span class="line">	<span class="keyword">float</span> c[<span class="number">5</span>];</span><br><span class="line">&#125;date;<span class="comment">//告诉编译器有date这个结构体数据类型</span></span><br><span class="line"></span><br><span class="line">date num[<span class="number">2</span>];	<span class="comment">//date类型结构体数组</span></span><br><span class="line"><span class="comment">//结构体指针</span></span><br><span class="line">date *p = &amp;num[<span class="number">0</span>];<span class="comment">//定义一个date类型的指针，将date类型的数组num[0]赋给指针</span></span><br><span class="line"><span class="comment">//指针访问成员</span></span><br><span class="line">p-&gt;a = <span class="number">10</span>;<span class="comment">//将值10赋给指针p指向date类型的num[0]下的int a变量</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>typedef  告诉编译器重新定义一个数据类型，别名。</p>
+<p>函数参数尽量用指针：1、节省空间。2、指针修改形参影响实参。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">结构体</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">共用体</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">枚举</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-C语言第十二课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -917,86 +1006,6 @@
 
 
   
-    <article id="post-C语言第一课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/01/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/">C语言入门概要</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/01/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-01T01:55:44.747Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="C语言第一课"><a href="#C语言第一课" class="headerlink" title="C语言第一课"></a>C语言第一课</h1><h2 id="入门概要"><a href="#入门概要" class="headerlink" title="入门概要"></a>入门概要</h2>
-        
-          <a class="article-more-a" href="/2021/03/01/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机组成</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/01/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1188,6 +1197,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">转义问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">共用体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">枚举</a>
               </li>
              
               <li class="article-tag-list-item">

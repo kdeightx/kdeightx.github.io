@@ -7,19 +7,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>常用函数 | kdeightx</title>
+  <title>结构体、共用体、枚举 | kdeightx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C语言第十二课常用库函数随机函数123#include &lt;time.h&gt;srand((unsigned)time(NULL));&#x2F;&#x2F;获取随机数种子int type &#x3D; rand() % 3;&#x2F;&#x2F;随机0-2这三个数">
+  <meta name="description" content="C语言第十三课结构体123456789101112typedef struct _date	&#x2F;&#x2F;struct是为了说明这是一个结构体类型，_date是结构体名，可以不写&amp;#123;	int a;				&#x2F;&#x2F;结构体内部可以写多个不同类型的数据	char b;				&#x2F;&#x2F;结构体的大小等于所有变量大小之和，但一般会不准，因为有系统优化对齐的原因。	float c[5];&amp;#125;date;&#x2F;&#x2F;告诉编译">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用函数">
-<meta property="og:url" content="http://example.com/2021/03/16/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/index.html">
+<meta property="og:title" content="结构体、共用体、枚举">
+<meta property="og:url" content="http://example.com/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/index.html">
 <meta property="og:site_name" content="kdeightx">
-<meta property="og:description" content="C语言第十二课常用库函数随机函数123#include &lt;time.h&gt;srand((unsigned)time(NULL));&#x2F;&#x2F;获取随机数种子int type &#x3D; rand() % 3;&#x2F;&#x2F;随机0-2这三个数">
+<meta property="og:description" content="C语言第十三课结构体123456789101112typedef struct _date	&#x2F;&#x2F;struct是为了说明这是一个结构体类型，_date是结构体名，可以不写&amp;#123;	int a;				&#x2F;&#x2F;结构体内部可以写多个不同类型的数据	char b;				&#x2F;&#x2F;结构体的大小等于所有变量大小之和，但一般会不准，因为有系统优化对齐的原因。	float c[5];&amp;#125;date;&#x2F;&#x2F;告诉编译">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-16T15:08:24.268Z">
-<meta property="article:modified_time" content="2021-03-16T15:26:19.530Z">
+<meta property="article:published_time" content="2021-03-17T12:41:10.198Z">
+<meta property="article:modified_time" content="2021-03-17T13:27:23.736Z">
 <meta property="article:author" content="芝士的力量">
-<meta property="article:tag" content="常用库函数">
+<meta property="article:tag" content="结构体">
+<meta property="article:tag" content="共用体">
+<meta property="article:tag" content="枚举">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="kdeightx" type="application/atom+xml">
@@ -146,20 +148,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C语言第十二课" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-C语言第十三课" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      常用函数
+      结构体、共用体、枚举
     </h1>
   
 
         
-        <a href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-16T15:08:24.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
+        <a href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-03-17T12:41:10.198Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-17</time>
 </a>
         
       </header>
@@ -167,11 +169,23 @@
     <div class="article-entry" itemprop="articleBody">
       
 	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
-        <h1 id="C语言第十二课"><a href="#C语言第十二课" class="headerlink" title="C语言第十二课"></a>C语言第十二课</h1><h2 id="常用库函数"><a href="#常用库函数" class="headerlink" title="常用库函数"></a>常用库函数</h2><h3 id="随机函数"><a href="#随机函数" class="headerlink" title="随机函数"></a>随机函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line">srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));<span class="comment">//获取随机数种子</span></span><br><span class="line"><span class="keyword">int</span> type = rand() % <span class="number">3</span>;<span class="comment">//随机0-2这三个数</span></span><br></pre></td></tr></table></figure>
+        <h1 id="C语言第十三课"><a href="#C语言第十三课" class="headerlink" title="C语言第十三课"></a>C语言第十三课</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">date</span>	//<span class="keyword">struct</span>是为了说明这是一个结构体类型，_<span class="title">date</span>是结构体名，可以不写</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;				<span class="comment">//结构体内部可以写多个不同类型的数据</span></span><br><span class="line">	<span class="keyword">char</span> b;				<span class="comment">//结构体的大小等于所有变量大小之和，但一般会不准，因为有系统优化对齐的原因。</span></span><br><span class="line">	<span class="keyword">float</span> c[<span class="number">5</span>];</span><br><span class="line">&#125;date;<span class="comment">//告诉编译器有date这个结构体数据类型</span></span><br><span class="line"></span><br><span class="line">date num[<span class="number">2</span>];	<span class="comment">//date类型结构体数组</span></span><br><span class="line"><span class="comment">//结构体指针</span></span><br><span class="line">date *p = &amp;num[<span class="number">0</span>];<span class="comment">//定义一个date类型的指针，将date类型的数组num[0]赋给指针</span></span><br><span class="line"><span class="comment">//指针访问成员</span></span><br><span class="line">p-&gt;a = <span class="number">10</span>;<span class="comment">//将值10赋给指针p指向date类型的num[0]下的int a变量</span></span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>typedef  告诉编译器重新定义一个数据类型，别名。</p>
+<p>函数参数尽量用指针：1、节省空间。2、指针修改形参影响实参。</p>
+</blockquote>
 <span id="more"></span>
 
-<h3 id="判断是否有按键输入函数"><a href="#判断是否有按键输入函数" class="headerlink" title="判断是否有按键输入函数"></a>判断是否有按键输入函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;conio.h&gt;</span></span></span><br><span class="line">_kbhit()<span class="comment">//返回0</span></span><br></pre></td></tr></table></figure>
+<h3 id="结构体嵌套"><a href="#结构体嵌套" class="headerlink" title="结构体嵌套"></a>结构体嵌套</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tag_1</span>&#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">tag_1</span> <span class="title">A</span>;</span>  <span class="comment">//这是错误的方式！！！！！</span></span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tag_1</span>&#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">tag_1</span> *<span class="title">A</span>;</span><span class="comment">//这才是正确的方式！！！，需要用指针。</span></span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;使用typedef时</span><br><span class="line">typedef struct&#123;</span><br><span class="line">    int value;		&#x2F;&#x2F;这是错误的方式！！！！</span><br><span class="line">    NODE *link;</span><br><span class="line">&#125;NODE;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;下面这三种才是正确的方式！！！！</span><br><span class="line">typedef struct tag_1&#123;</span><br><span class="line">    int value;</span><br><span class="line">    struct tag_1 *link; </span><br><span class="line">&#125; NODE;&#x2F;&#x2F;这个时候NODE类型没有创造出来，所以不能用！！！</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">struct tag_2;</span><br><span class="line">typedef struct tag_2 NODE;&#x2F;&#x2F;这个时候NODE类型被创造出来了，所以可以用</span><br><span class="line">struct tag_2&#123;</span><br><span class="line">    int value;</span><br><span class="line">    NODE *link;   </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">struct tag_3&#123;</span><br><span class="line">    int value;</span><br><span class="line">    struct tag_3 *link; </span><br><span class="line">&#125;;</span><br><span class="line">typedef struct tag_3 NODE;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="共用体"><a href="#共用体" class="headerlink" title="共用体"></a>共用体</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">union</span> _<span class="title">date</span>		//<span class="title">union</span>是为了说明这是个共用体类型，_<span class="title">date</span>是共用体名，可以不写</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;				<span class="comment">//共用体内部可以写多个不同类型的数据</span></span><br><span class="line">	<span class="keyword">char</span> b;				<span class="comment">//共用体的大小等于最大的类型变量大小，</span></span><br><span class="line">&#125;date;<span class="comment">//告诉编译器有date这个共用体数据类型</span></span><br><span class="line"></span><br><span class="line">date num[<span class="number">2</span>];	<span class="comment">//date类型共用体数组</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">COLOR</span>			//<span class="title">enum</span>是为了说明这是枚举类型，<span class="title">COLOR</span>枚举名</span></span><br><span class="line"><span class="class">&#123;</span>	</span><br><span class="line">	RED,			<span class="comment">//默认从0开始，RED == 0;</span></span><br><span class="line">	GREEN,			<span class="comment">//GREEN == 1;</span></span><br><span class="line">	BLUE			<span class="comment">//BLUE == 2;依次类推。</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">COLOR</span>			//<span class="title">enum</span>是为了说明这是枚举类型，<span class="title">COLOR</span>枚举名</span></span><br><span class="line"><span class="class">&#123;</span>	</span><br><span class="line">	RED = <span class="number">3</span>,			</span><br><span class="line">	GREEN = <span class="number">2</span>,			</span><br><span class="line">	BLUE = <span class="number">1</span>,</span><br><span class="line">    BLACK				<span class="comment">//此时BLACK的值为2，因为它根据前一个的值递增，但这就会出现bug，因为GREEN的值也是2。</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
       
@@ -207,7 +221,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">常用库函数</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">结构体</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">共用体</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">枚举</a>
         		</li>
       		
 		</ul>
@@ -263,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/16/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +299,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          结构体、共用体、枚举
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">指针</div>
+    <a href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">常用函数</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -315,7 +328,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">C语言第十二课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">常用库函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">随机函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%9C%89%E6%8C%89%E9%94%AE%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">判断是否有按键输入函数</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">C语言第十三课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">1.1.</span> <span class="toc-text">结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E5%B5%8C%E5%A5%97"><span class="toc-number">1.1.1.</span> <span class="toc-text">结构体嵌套</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B1%E7%94%A8%E4%BD%93"><span class="toc-number">1.2.</span> <span class="toc-text">共用体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-number">1.3.</span> <span class="toc-text">枚举</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
