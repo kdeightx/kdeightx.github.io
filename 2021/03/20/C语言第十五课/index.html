@@ -7,15 +7,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | kdeightx</title>
+  <title>文件操作 | kdeightx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="kdeightx的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kdeightx">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="C语言第十五课打开文件fopen12345678FILE* fopen(const char* fileName, const char* openMode);&#x2F;&#x2F;fileName:文件名&#x2F;&#x2F;openMode：打开方式fopen(&quot;text.txt&quot;,&quot;r&quot;);&#x2F;&#x2F;以只读模式打开text.txt文件，打开的文件要和程序在同一目录下fopen(&quot;F:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件操作">
+<meta property="og:url" content="http://example.com/2021/03/20/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE/index.html">
 <meta property="og:site_name" content="kdeightx">
-<meta property="og:description" content="kdeightx的博客">
+<meta property="og:description" content="C语言第十五课打开文件fopen12345678FILE* fopen(const char* fileName, const char* openMode);&#x2F;&#x2F;fileName:文件名&#x2F;&#x2F;openMode：打开方式fopen(&quot;text.txt&quot;,&quot;r&quot;);&#x2F;&#x2F;以只读模式打开text.txt文件，打开的文件要和程序在同一目录下fopen(&quot;F:">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-20T06:49:11.553Z">
+<meta property="article:modified_time" content="2021-03-20T10:07:06.909Z">
 <meta property="article:author" content="芝士的力量">
 <meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary">
@@ -144,502 +146,296 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-C语言第十五课" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      文件操作
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/20/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE/" class="archive-article-date">
+
+        
+        <a href="/2021/03/20/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE/" class="archive-article-date">
   	<time datetime="2021-03-20T06:49:11.553Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/20/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE/">文件操作</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h1 id="C语言第十五课"><a href="#C语言第十五课" class="headerlink" title="C语言第十五课"></a>C语言第十五课</h1><h2 id="打开文件fopen"><a href="#打开文件fopen" class="headerlink" title="打开文件fopen"></a>打开文件<code>fopen</code></h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">FILE* <span class="title">fopen</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* fileName, <span class="keyword">const</span> <span class="keyword">char</span>* openMode)</span></span>;</span><br><span class="line"><span class="comment">//fileName:文件名</span></span><br><span class="line"><span class="comment">//openMode：打开方式</span></span><br><span class="line"></span><br><span class="line">fopen(<span class="string">&quot;text.txt&quot;</span>,<span class="string">&quot;r&quot;</span>);<span class="comment">//以只读模式打开text.txt文件，打开的文件要和程序在同一目录下</span></span><br><span class="line">fopen(<span class="string">&quot;F:\\CR40\\15\\test.txt&quot;</span>, <span class="string">&quot;w&quot;</span>);<span class="comment">//以绝对路径的方式打开，因为\会被当做转义字符，因此需要用两个斜杠\\</span></span><br><span class="line">fopen();<span class="comment">//返回值是一个指针</span></span><br><span class="line">FILE* fp = fopen(<span class="string">&quot;F:\\CR40\\15\\test.txt&quot;</span>, <span class="string">&quot;w&quot;</span>);</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<span id="more"></span>
 
+<h3 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h3><h4 id="文本内容（文本方式是先将字符转成ASCII码，然后以二进制存储）"><a href="#文本内容（文本方式是先将字符转成ASCII码，然后以二进制存储）" class="headerlink" title="文本内容（文本方式是先将字符转成ASCII码，然后以二进制存储）"></a>文本内容（文本方式是先将字符转成ASCII码，然后以二进制存储）</h4><ul>
+<li><p><code>r</code>   只读打开(文件必须存在)</p>
+</li>
+<li><p><code>w</code>   写(文件不存在就创建，有数据就清空)</p>
+</li>
+<li><p><code>a</code>   写(追加数据，不清除内容)</p>
+</li>
+<li><p><code>r+</code>   读写(文件必须存在)</p>
+</li>
+<li><p><code>w+</code>   读写(文件不存在就创建，有数据就清空)</p>
+</li>
+<li><p><code>a+</code>   读写(追加数据，不清除内容)</p>
+</li>
+</ul>
+<h4 id="二进制内容-binary"><a href="#二进制内容-binary" class="headerlink" title="二进制内容(binary)"></a>二进制内容(binary)</h4><ul>
+<li><p><code>rb</code>   只读打开(文件必须存在)</p>
+</li>
+<li><p><code>wb</code>   写(文件不存在就创建，有数据就清空)</p>
+</li>
+<li><p><code>ab</code>   写(追加数据，不清除内容)</p>
+</li>
+<li><p><code>rb+</code>   读写(文件必须存在)</p>
+</li>
+<li><p><code>wb+</code>   读写(文件不存在就创建，有数据就清空)</p>
+</li>
+<li><p><code>ab+</code>   读写(追加数据，不清除内容)</p>
+</li>
+</ul>
+<h2 id="关闭文件fclose"><a href="#关闭文件fclose" class="headerlink" title="关闭文件fclose"></a>关闭文件<code>fclose</code></h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fclose</span><span class="params">(FILE* pointerOnFile)</span></span>;<span class="comment">//括号内是文件指针</span></span><br><span class="line">fclose(fp);<span class="comment">//这样就把fp这个文件指针打开的文件关闭了</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h2><h3 id="函数fwrite"><a href="#函数fwrite" class="headerlink" title="函数fwrite"></a>函数<code>fwrite</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">size_t</span> <span class="title">fwrite</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *ptr, <span class="keyword">size_t</span> size, <span class="keyword">size_t</span> nmemb, FILE *stream)</span></span></span><br><span class="line"><span class="function"><span class="comment">//ptr是被写入的元素数组指针</span></span></span><br><span class="line"><span class="function"><span class="comment">//size被写入的每个元素的大小，以字节为单位</span></span></span><br><span class="line"><span class="function"><span class="comment">//nmemb是元素个数，每个元素的大小是size字节</span></span></span><br><span class="line"><span class="function"><span class="comment">//stream是指向FILE对象的指针，该FILE对象指定了一个输出流。被写入的文件</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   FILE *fp;</span><br><span class="line">   <span class="keyword">char</span> str[] = <span class="string">&quot;This is runoob.com&quot;</span>;</span><br><span class="line"> </span><br><span class="line">   fp = fopen( <span class="string">&quot;file.txt&quot;</span> , <span class="string">&quot;w&quot;</span> );</span><br><span class="line">   fwrite(str, <span class="keyword">sizeof</span>(str) , <span class="number">1</span>, fp );<span class="comment">//因为char每个元素字节为一个，所以写1</span></span><br><span class="line"> </span><br><span class="line">   fclose(fp);</span><br><span class="line">  </span><br><span class="line">   <span class="keyword">return</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数fputc"><a href="#函数fputc" class="headerlink" title="函数fputc"></a>函数<code>fputc</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fputc</span><span class="params">(<span class="keyword">int</span> character, FILE* pointerOnFile)</span></span>;</span><br><span class="line"><span class="comment">//character:int型变量，表示要写入的字符。也可以直接写&#x27;A&#x27;这种形式</span></span><br><span class="line"><span class="comment">//pointerOnFile:指向文件的指针</span></span><br><span class="line"><span class="comment">//返回int值，写入失败返回EOF。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE* file = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    file = fopen(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;w&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (file != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        fputc(<span class="string">&#x27;A&#x27;</span>, file);  <span class="comment">// 写入字符 A</span></span><br><span class="line">        fclose(file);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数fputs"><a href="#函数fputs" class="headerlink" title="函数fputs"></a>函数<code>fputs</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fputs</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* <span class="built_in">string</span>, FILE* pointerOnFile)</span></span>;</span><br><span class="line"><span class="comment">//string:要写入的字符串</span></span><br><span class="line"><span class="comment">//pointerOnFile:指向文件的指针</span></span><br><span class="line"><span class="comment">//出错返回EOF</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE* file = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    file = fopen(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;w&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (file != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">fputs</span>(<span class="string">&quot;你好，朋友。\n最近怎么样？&quot;</span>, file);</span><br><span class="line">        fclose(file);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数fprintf"><a href="#函数fprintf" class="headerlink" title="函数fprintf"></a>函数<code>fprintf</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fprintf</span><span class="params">(FILE *stream, <span class="keyword">const</span> <span class="keyword">char</span> *format, ...)</span><span class="comment">//用法和printf类似</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE* file = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">int</span> age = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    file = fopen(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;w&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (file != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 询问用户的年龄</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;您几岁了 ? &quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;age);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 写入文件</span></span><br><span class="line">        <span class="built_in">fprintf</span>(file, <span class="string">&quot;使用者年龄是 %d 岁\n&quot;</span>, age);</span><br><span class="line">        fclose(file);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件读出"><a href="#文件读出" class="headerlink" title="文件读出"></a>文件读出</h2><h3 id="函数fread"><a href="#函数fread" class="headerlink" title="函数fread"></a>函数<code>fread</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">size_t</span> <span class="title">fread</span><span class="params">(<span class="keyword">void</span> *ptr, <span class="keyword">size_t</span> size, <span class="keyword">size_t</span> nmemb, FILE *stream)</span></span></span><br><span class="line"><span class="function"><span class="comment">//ptr是被写入的指针对象。用这个指针对象来显示文件里的内容</span></span></span><br><span class="line"><span class="function"><span class="comment">//size是读取的每一个元素的大小，以字节为单位</span></span></span><br><span class="line"><span class="function"><span class="comment">//nmemb是元素的个数，每个元素的大小是size字节</span></span></span><br><span class="line"><span class="function"><span class="comment">//stream是指向FILE对象的指针。要显示的文件对象</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   FILE *fp;</span><br><span class="line">   <span class="keyword">char</span> c[] = <span class="string">&quot;This is runoob&quot;</span>;</span><br><span class="line">   <span class="keyword">char</span> buffer[<span class="number">20</span>];</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/* 打开文件用于读写 */</span></span><br><span class="line">   fp = fopen(<span class="string">&quot;file.txt&quot;</span>, <span class="string">&quot;w+&quot;</span>);</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/* 写入数据到文件 */</span></span><br><span class="line">   fwrite(c, <span class="built_in">strlen</span>(c) + <span class="number">1</span>, <span class="number">1</span>, fp);</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/* 查找文件的开头 */</span></span><br><span class="line">   fseek(fp, <span class="number">0</span>, SEEK_SET);</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/* 读取并显示数据 */</span></span><br><span class="line">   fread(buffer, <span class="built_in">strlen</span>(c)+<span class="number">1</span>, <span class="number">1</span>, fp);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, buffer);</span><br><span class="line">   fclose(fp);</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">return</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数fgetc"><a href="#函数fgetc" class="headerlink" title="函数fgetc"></a>函数<code>fgetc</code></h3><p>读出一个字符</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fgetc</span><span class="params">(FILE* pointerOnFile)</span></span>;</span><br><span class="line"><span class="comment">//返回值是读到的字符，如果读取不到字符，返回EOF</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE* file = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">int</span> currentCharacter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    file = fopen(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (file != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 循环读取，每次一个字符</span></span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">        &#123;</span><br><span class="line">            currentCharacter = fgetc(file);  <span class="comment">// 读取一个字符</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, currentCharacter);  <span class="comment">// 显示读取到的字符</span></span><br><span class="line">        &#125; <span class="keyword">while</span> (currentCharacter != EOF);  <span class="comment">// 我们继续，直到 fgetc 返回 EOF（表示“文件结束”）为止</span></span><br><span class="line"></span><br><span class="line">        fclose(file);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数fgets"><a href="#函数fgets" class="headerlink" title="函数fgets"></a>函数<code>fgets</code></h3><p>读出一个字符串</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">fgets</span><span class="params">(<span class="keyword">char</span>* <span class="built_in">string</span>, <span class="keyword">int</span> characterNumberToRead, FILE* pointerOnFile)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_SIZE 1000  <span class="comment">// 数组的最大尺寸 1000</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE* file = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">char</span> <span class="built_in">string</span>[MAX_SIZE] = <span class="string">&quot;&quot;</span>;  <span class="comment">// 尺寸为 MAX_SIZE 的数组，初始为空</span></span><br><span class="line"></span><br><span class="line">    file = fopen(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (file != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        fgets(<span class="built_in">string</span>, MAX_SIZE, file);  <span class="comment">// 我们读取最多 MAX_SIZE 个字符的字符串，将其存储在 string 中</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, <span class="built_in">string</span>);  <span class="comment">// 显示字符串</span></span><br><span class="line"></span><br><span class="line">        fclose(file);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>读取整个文件内容</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_SIZE 1000  <span class="comment">// 数组的最大尺寸 1000</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE* file = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">char</span> <span class="built_in">string</span>[MAX_SIZE] = <span class="string">&quot;&quot;</span>;  <span class="comment">// 尺寸为 MAX_SIZE 的数组，初始为空</span></span><br><span class="line"></span><br><span class="line">    file = fopen(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (file != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (fgets(<span class="built_in">string</span>, MAX_SIZE, file) != <span class="literal">NULL</span>)  <span class="comment">// 我们一行一行地读取文件内容，只要不遇到文件结尾</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, <span class="built_in">string</span>);  <span class="comment">// 显示字符串</span></span><br><span class="line"></span><br><span class="line">        fclose(file);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="函数fscanf"><a href="#函数fscanf" class="headerlink" title="函数fscanf"></a>函数<code>fscanf</code></h3><p>与<code>scanf</code>用法类似，只是多了一个文件指针。可以从文件读取。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fscanf</span><span class="params">(FILE *stream, <span class="keyword">const</span> <span class="keyword">char</span> *format, ...)</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE* file = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">int</span> score[<span class="number">3</span>] = &#123;<span class="number">0</span>&#125;;  <span class="comment">// 包含 3 个最佳得分的数组</span></span><br><span class="line"></span><br><span class="line">    file = fopen(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (file != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">fscanf</span>(file, <span class="string">&quot;%d %d %d&quot;</span>, &amp;score[<span class="number">0</span>], &amp;score[<span class="number">1</span>], &amp;score[<span class="number">2</span>]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;最佳得分是 : %d, %d 和 %d\n&quot;</span>, score[<span class="number">0</span>], score[<span class="number">1</span>], score[<span class="number">2</span>]);</span><br><span class="line"></span><br><span class="line">        fclose(file);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在文件中移动"><a href="#在文件中移动" class="headerlink" title="在文件中移动"></a>在文件中移动</h2><blockquote>
+<p>个人建议使用下面游标时最好在二进制文件里移动，因为它是按照字节来移动的！！！</p>
+<p>二进制文件使用方法就是创建时读写方式和文件后缀修改即可</p>
+<p>文本文件里依旧是按字节来移动，而不是按汉字数来移动。</p>
+</blockquote>
+<h3 id="函数ftell"><a href="#函数ftell" class="headerlink" title="函数ftell"></a>函数<code>ftell</code></h3><p>告诉目前在文件中的哪个位置。tell表示“告诉”</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">ftell</span><span class="params">(FILE* pointerOnFile)</span></span>;</span><br><span class="line"><span class="comment">//pointerOnFile是文件指针，指向当前文件。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="函数fseek"><a href="#函数fseek" class="headerlink" title="函数fseek"></a>函数<code>fseek</code></h3><p>移动文件中的游标到指定位置。seek表示“探寻”</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fseek</span><span class="params">(FILE* pointerOnFile, <span class="keyword">long</span> move, <span class="keyword">int</span> origin)</span></span>;</span><br><span class="line"><span class="comment">//move参数：可以是一个正整数。表明向前移动；0，表明不移动；或者负数，表明回退。</span></span><br><span class="line"><span class="comment">//origin参数：取值为下面三个任意一个</span></span><br><span class="line"><span class="comment">//			SEEK_SET:文件开始处。SET表示“设置”</span></span><br><span class="line"><span class="comment">//			SEEK_CUR:游标当前所在位置。CUR是当前(current)的缩写</span></span><br><span class="line"><span class="comment">//			SEEK_END:文件末尾。END表示“结尾”。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这行代码将游标放置到距离文件开始处 5 个位置的地方</span></span><br><span class="line">fseek(file, <span class="number">5</span>, SEEK_SET);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这行代码将游标放置到距离当前位置往后 3 个位置的地方</span></span><br><span class="line">fseek(file, <span class="number">-3</span>, SEEK_CUR);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这行代码将游标放置到文件末尾</span></span><br><span class="line">fseek(file, <span class="number">0</span>, SEEK_END);</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数rewind"><a href="#函数rewind" class="headerlink" title="函数rewind"></a>函数<code>rewind</code></h3><p>将游标重置到文件的开始位置。rewind表示“转回”</p>
+<p>相当于<code>fseek</code>来使游标回到0的位置。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rewind</span><span class="params">(FILE* pointerOnFile)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件的重命名和删除-注意这两个函数不需要文件指针做参数，传文件名即可"><a href="#文件的重命名和删除-注意这两个函数不需要文件指针做参数，传文件名即可" class="headerlink" title="文件的重命名和删除(注意这两个函数不需要文件指针做参数，传文件名即可)"></a>文件的重命名和删除(注意这两个函数不需要文件指针做参数，传文件名即可)</h2><h3 id="函数rename"><a href="#函数rename" class="headerlink" title="函数rename"></a>函数<code>rename</code></h3><p>重命名一个文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rename</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* oldName, <span class="keyword">const</span> <span class="keyword">char</span>* newName)</span></span>;</span><br><span class="line"><span class="comment">//oldName是“旧名字”。newName是“新名字”。</span></span><br><span class="line">成功返回<span class="number">0</span>；否则返回非零<span class="keyword">int</span>型值</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">      rename(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;renamed_test.txt&quot;</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数remove"><a href="#函数remove" class="headerlink" title="函数remove"></a>函数<code>remove</code></h3><p>删除一个文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int remove(const char* fileToRemove);</span><br><span class="line">&#x2F;&#x2F;fileToRemove是要删除的文件名。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>remove函数慎用！它不提醒你是否确认删除文件，而是从硬盘永久删除，不进垃圾箱！！！！</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    remove(<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老铁的打赏！滚来滚去……~(～o￣▽￣)～o 。。。滚来滚去……o～(＿△＿o～) ~。。。<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/20/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%9B%9B%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-18T07:58:51.134Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%9B%9B%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">堆和栈以及位运算</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%9B%9B%E8%AF%BE/">堆和栈以及位运算</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">堆</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">位运算</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">与</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">或</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异或</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">动态内存调用</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">左移<<</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">右移>></a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">C语言第十五课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6fopen"><span class="toc-number">1.1.</span> <span class="toc-text">打开文件fopen</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">打开方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%EF%BC%88%E6%96%87%E6%9C%AC%E6%96%B9%E5%BC%8F%E6%98%AF%E5%85%88%E5%B0%86%E5%AD%97%E7%AC%A6%E8%BD%AC%E6%88%90ASCII%E7%A0%81%EF%BC%8C%E7%84%B6%E5%90%8E%E4%BB%A5%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%98%E5%82%A8%EF%BC%89"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">文本内容（文本方式是先将字符转成ASCII码，然后以二进制存储）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%86%85%E5%AE%B9-binary"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">二进制内容(binary)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6fclose"><span class="toc-number">1.2.</span> <span class="toc-text">关闭文件fclose</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5"><span class="toc-number">1.3.</span> <span class="toc-text">文件写入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fwrite"><span class="toc-number">1.3.1.</span> <span class="toc-text">函数fwrite</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fputc"><span class="toc-number">1.3.2.</span> <span class="toc-text">函数fputc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fputs"><span class="toc-number">1.3.3.</span> <span class="toc-text">函数fputs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fprintf"><span class="toc-number">1.3.4.</span> <span class="toc-text">函数fprintf</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%87%BA"><span class="toc-number">1.4.</span> <span class="toc-text">文件读出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fread"><span class="toc-number">1.4.1.</span> <span class="toc-text">函数fread</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fgetc"><span class="toc-number">1.4.2.</span> <span class="toc-text">函数fgetc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fgets"><span class="toc-number">1.4.3.</span> <span class="toc-text">函数fgets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fscanf"><span class="toc-number">1.4.4.</span> <span class="toc-text">函数fscanf</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E6%96%87%E4%BB%B6%E4%B8%AD%E7%A7%BB%E5%8A%A8"><span class="toc-number">1.5.</span> <span class="toc-text">在文件中移动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0ftell"><span class="toc-number">1.5.1.</span> <span class="toc-text">函数ftell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0fseek"><span class="toc-number">1.5.2.</span> <span class="toc-text">函数fseek</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0rewind"><span class="toc-number">1.5.3.</span> <span class="toc-text">函数rewind</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E9%87%8D%E5%91%BD%E5%90%8D%E5%92%8C%E5%88%A0%E9%99%A4-%E6%B3%A8%E6%84%8F%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%87%BD%E6%95%B0%E4%B8%8D%E9%9C%80%E8%A6%81%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88%E5%81%9A%E5%8F%82%E6%95%B0%EF%BC%8C%E4%BC%A0%E6%96%87%E4%BB%B6%E5%90%8D%E5%8D%B3%E5%8F%AF"><span class="toc-number">1.6.</span> <span class="toc-text">文件的重命名和删除(注意这两个函数不需要文件指针做参数，传文件名即可)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0rename"><span class="toc-number">1.6.1.</span> <span class="toc-text">函数rename</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0remove"><span class="toc-number">1.6.2.</span> <span class="toc-text">函数remove</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+        
+    </div>
+</aside>
+
+
+
+
+
+      <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'true' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  new Valine({
+      // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+      app_id: 'Jh0QTrhSVRt87AyX9X876oT1-MdYXbMMI',
+      app_key: 'mMvMrsEofuM5CLXbAlA88AU0',
+      placeholder: '有话要说？'
+    });
+</script>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-17T12:41:10.198Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-17</time>
-</a>
-        </div>
-    	 
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/">结构体、共用体、枚举</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">结构体</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">共用体</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">枚举</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-16T15:08:24.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/">常用函数</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">常用库函数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-15T08:44:43.646Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/">指针</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">宏</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">变量</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">指针</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">转义问题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/13/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-13T02:05:54.012Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/13/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/">预处理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编码</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">常用字符串函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">预处理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/11/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-11T02:53:36.528Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/11/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/">字符串</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编码</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C标准</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cppreference.com</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">宽字符</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">编译器</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ASCII编码表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/08/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-08T02:37:30.136Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/08/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/">数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">冒泡</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">查找</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/05/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-05T01:55:36.687Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/05/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E8%AF%BE/">函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">内存</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">命名法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/04/C%E8%AF%AD%E9%9F%B3%E7%AC%AC%E5%9B%9B%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-04T14:52:03.230Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/04/C%E8%AF%AD%E9%9F%B3%E7%AC%AC%E5%9B%9B%E8%AF%BE/">分支与循环</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">循环结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">运算符</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -663,8 +459,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
