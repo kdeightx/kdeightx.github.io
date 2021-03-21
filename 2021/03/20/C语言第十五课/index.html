@@ -17,7 +17,7 @@
 <meta property="og:description" content="C语言第十五课打开文件fopen12345678FILE* fopen(const char* fileName, const char* openMode);&#x2F;&#x2F;fileName:文件名&#x2F;&#x2F;openMode：打开方式fopen(&quot;text.txt&quot;,&quot;r&quot;);&#x2F;&#x2F;以只读模式打开text.txt文件，打开的文件要和程序在同一目录下fopen(&quot;F:">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-20T06:49:11.553Z">
-<meta property="article:modified_time" content="2021-03-20T10:07:06.909Z">
+<meta property="article:modified_time" content="2021-03-21T05:04:20.459Z">
 <meta property="article:author" content="芝士的力量">
 <meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary">
@@ -201,7 +201,7 @@
 </ul>
 <h2 id="关闭文件fclose"><a href="#关闭文件fclose" class="headerlink" title="关闭文件fclose"></a>关闭文件<code>fclose</code></h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fclose</span><span class="params">(FILE* pointerOnFile)</span></span>;<span class="comment">//括号内是文件指针</span></span><br><span class="line">fclose(fp);<span class="comment">//这样就把fp这个文件指针打开的文件关闭了</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h2><h3 id="函数fwrite"><a href="#函数fwrite" class="headerlink" title="函数fwrite"></a>函数<code>fwrite</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">size_t</span> <span class="title">fwrite</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *ptr, <span class="keyword">size_t</span> size, <span class="keyword">size_t</span> nmemb, FILE *stream)</span></span></span><br><span class="line"><span class="function"><span class="comment">//ptr是被写入的元素数组指针</span></span></span><br><span class="line"><span class="function"><span class="comment">//size被写入的每个元素的大小，以字节为单位</span></span></span><br><span class="line"><span class="function"><span class="comment">//nmemb是元素个数，每个元素的大小是size字节</span></span></span><br><span class="line"><span class="function"><span class="comment">//stream是指向FILE对象的指针，该FILE对象指定了一个输出流。被写入的文件</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h2><h3 id="函数fwrite"><a href="#函数fwrite" class="headerlink" title="函数fwrite"></a>函数<code>fwrite</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">size_t</span> <span class="title">fwrite</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *ptr, <span class="keyword">size_t</span> size, <span class="keyword">size_t</span> nmemb, FILE *stream)</span></span></span><br><span class="line"><span class="function"><span class="comment">//ptr是要写入的元素数组指针内容</span></span></span><br><span class="line"><span class="function"><span class="comment">//size被写入的每个元素的大小，以字节为单位</span></span></span><br><span class="line"><span class="function"><span class="comment">//nmemb是元素个数，每个元素的大小是size字节</span></span></span><br><span class="line"><span class="function"><span class="comment">//stream是指向FILE对象的指针，该FILE对象指定了一个输出流。被写入的文件</span></span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   FILE *fp;</span><br><span class="line">   <span class="keyword">char</span> str[] = <span class="string">&quot;This is runoob.com&quot;</span>;</span><br><span class="line"> </span><br><span class="line">   fp = fopen( <span class="string">&quot;file.txt&quot;</span> , <span class="string">&quot;w&quot;</span> );</span><br><span class="line">   fwrite(str, <span class="keyword">sizeof</span>(str) , <span class="number">1</span>, fp );<span class="comment">//因为char每个元素字节为一个，所以写1</span></span><br><span class="line"> </span><br><span class="line">   fclose(fp);</span><br><span class="line">  </span><br><span class="line">   <span class="keyword">return</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -530,19 +530,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IDE</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机组成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IDE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
