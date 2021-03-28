@@ -772,8 +772,8 @@ body, button, input, select, textarea {
 }
 
 body {
-  overflow-y: hidden;
-  background: url('/assets/出舱.jpg') no-repeat fixed top;
+    overflow-y: hidden;
+    background: #eaeaea;
 }
 
 #container, body, html {
