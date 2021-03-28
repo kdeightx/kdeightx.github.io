@@ -814,7 +814,7 @@ body {
         }
 
 .left-col {
-    /*//background: #fff;
+  /*//background: #fff;
     background-image: url('/assets/背影.png');
     width: 300px;
     position: fixed;
@@ -822,8 +822,7 @@ body {
     transition: all .2s ease-in;
     height: 100%;
     z-index: 999;*/
-    
-    width: 300px;
+  /*width: 300px;
     position: fixed;
     opacity: 1;
     transition: all .2s ease-in;
@@ -831,7 +830,18 @@ body {
     z-index: 999;
     overflow: hidden;
     overflow-y: auto;
-    margin-bottom: 15px;
+    margin-bottom: 15px;*/
+
+  background-color: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255,255, 0.5));
+  width: 300px;
+  position: fixed;
+  opacity: 1;
+  transition: all .2s ease-in;
+  height: 100%;
+  z-index: 999;
+  overflow: hidden;
+  overflow-y: auto;
+  margin-bottom: 15px
 }
 
     .left-col .overlay {
@@ -927,17 +937,31 @@ body {
             text-align: center;
         }
 
-            .left-col #header .profilepic img {
-                border-radius: 300px;
+          .left-col #header .profilepic img {
+            /*border-radius: 300px;
                 opacity: 1;
-                -webkit-transition: all .2s ease-in;
-            }
+                -webkit-transition: all .2s ease-in;*/
+
+            width: 100%;
+            height: 100%;
+            background: #88acdb;
+            border-radius: 50%;
+            border: 0;
+            -webkit-transition: -webkit-transform 1s ease-out;
+            -moz-transition: -moz-transform 1s ease-out;
+            -o-transition: -o-transform 1s ease-out;
+            -ms-transition: -ms-transform 1s ease-out
+          }
 
                 .left-col #header .profilepic img.show {
                     width: 100%;
                     height: 100%;
                     opacity: 1;
                 }
+
+            .left-col #header .profilepic img:hover {
+              transform: rotate(1turn)
+            }
 
         .left-col #header .header-author {
             text-align: center;
@@ -1610,11 +1634,18 @@ pre .css ~ * .id, pre .id {
     }
 
 .archives-wrap {
-    position: relative;
+  /*position: relative;
     margin: 0 30px;
     padding-right: 60px;
     border-bottom: 1px solid #eee;
-    background: #fff;
+    background: #fff;*/
+
+  position: relative;
+  margin: 0 30px;
+  padding-right: 60px;
+  border-bottom: 1px solid #eee;
+  /*background: #fff;*/
+  background-color: rgba(236, 236, 236,0.6);
 }
 
     .archives-wrap:first-child {
@@ -1664,11 +1695,19 @@ pre .css ~ * .id, pre .id {
             border-bottom: none;
         }
 
-    .archives .archive-article-title {
-        font-size: 16px;
+  .archives .archive-article-title {
+    /*font-size: 16px;
         color: #333;
-        transition: color .3s;
-    }
+        transition: color .3s;*/
+
+    font-size: 16px;
+    font-weight: bold;
+    /*color: #333;*/
+    /*transition: color .3s*/
+    background: transparent;
+    text-decoration: none;
+    color: # af9;
+  }
 
         .archives .archive-article-title:hover {
             color: #657b83;
@@ -2041,13 +2080,22 @@ pre .css ~ * .id, pre .id {
 }
 
 .article {
-    margin: 30px;
+  /*margin: 30px;
     position: relative;
     border: 1px solid #ddd;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
     background: #fff;
-    transition: all .2s ease-in;
+    transition: all .2s ease-in;*/
+
+  margin: 30px;
+  position: relative;
+  border: 1px solid #ddd;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  /*background: #fff;*/
+  background: rgba(255,255,255,.5);
+  transition: all .2s ease-in;
 }
 
     .article img {
@@ -2137,7 +2185,8 @@ pre .css ~ * .id, pre .id {
 }
 
 .article-inner {
-    border-color: #d1d1d1;
+  /*border-color: #d1d1d1;*/
+  background-color: rgba(193, 194, 195,0.6);
 }
 
     .article-inner h1 {

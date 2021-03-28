@@ -57,7 +57,7 @@
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
-	<div class="left-col" q-class="show:isShow"  style="background: rgba(0,0,0,0.5)">
+	<div class="left-col" q-class="show:isShow"  style="background: url(/assets/宇航员.jpg) no-repeat 100%;background-size:cover;opacity:0.8;filter:alpha(opacity=80);">
       
 <div class="overlay" style="background: #00000"></div>
 
@@ -113,7 +113,7 @@
 </div>
 
     </div>
-    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse" style="background: rgba(25, 25, 25, 0)">
       
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #00000"></div>
@@ -193,7 +193,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
         <h1 id="C语言第十三课"><a href="#C语言第十三课" class="headerlink" title="C语言第十三课"></a>C语言第十三课</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">date</span>	//<span class="keyword">struct</span>是为了说明这是一个结构体类型，_<span class="title">date</span>是结构体名，可以不写</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;				<span class="comment">//结构体内部可以写多个不同类型的数据</span></span><br><span class="line">	<span class="keyword">char</span> b;				<span class="comment">//结构体的大小等于所有变量大小之和，但一般会不准，因为有系统优化对齐的原因。</span></span><br><span class="line">	<span class="keyword">float</span> c[<span class="number">5</span>];</span><br><span class="line">&#125;date;<span class="comment">//告诉编译器有date这个结构体数据类型</span></span><br><span class="line"></span><br><span class="line">date num[<span class="number">2</span>];	<span class="comment">//date类型结构体数组</span></span><br><span class="line"><span class="comment">//结构体指针</span></span><br><span class="line">date *p = &amp;num[<span class="number">0</span>];<span class="comment">//定义一个date类型的指针，将date类型的数组num[0]赋给指针</span></span><br><span class="line"><span class="comment">//指针访问成员</span></span><br><span class="line">p-&gt;a = <span class="number">10</span>;<span class="comment">//将值10赋给指针p指向date类型的num[0]下的int a变量</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
@@ -355,19 +355,6 @@
         </div>
         
         
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">C语言第十三课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">1.1.</span> <span class="toc-text">结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E5%B5%8C%E5%A5%97"><span class="toc-number">1.1.1.</span> <span class="toc-text">结构体嵌套</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B1%E7%94%A8%E4%BD%93"><span class="toc-number">1.2.</span> <span class="toc-text">共用体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-number">1.3.</span> <span class="toc-text">枚举</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
     </div>
 </aside>
 
@@ -423,6 +410,7 @@
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
