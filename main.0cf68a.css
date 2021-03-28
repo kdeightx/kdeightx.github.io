@@ -814,16 +814,24 @@ body {
         }
 
 .left-col {
-    /*//background: #fff;
-    background-image: url('/assets/��Ӱ.png');
+  /*background: #fff;
+    background-image: url('/assets/背影.png');
     width: 300px;
     position: fixed;
     opacity: 1;
     transition: all .2s ease-in;
     height: 100%;
     z-index: 999;*/
-    
-    width: 300px;
+  /* background:#fff; */
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/assets/出舱.jpg') no-repeat 0% 20%/ cover;
+  width: 300px;
+  position: fixed;
+  opacity: 1;
+  transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  height: 100%;
+  z-index: 999
+  /*width: 300px;
     position: fixed;
     opacity: 1;
     transition: all .2s ease-in;
@@ -831,7 +839,7 @@ body {
     z-index: 999;
     overflow: hidden;
     overflow-y: auto;
-    margin-bottom: 15px;
+    margin-bottom: 15px;*/
 }
 
     .left-col .overlay {
