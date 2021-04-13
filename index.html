@@ -161,6 +161,426 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-深入C语言第十课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/13/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/">深入C语言第十课</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/04/13/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-04-13T02:18:22.054Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
+        <h1 id="深入C语言第十课"><a href="#深入C语言第十课" class="headerlink" title="深入C语言第十课"></a>深入C语言第十课</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/13/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-深入C语言第九课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/">深入C语言第九课</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-04-12T02:36:43.414Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
+        <h1 id="深入C语言第九课"><a href="#深入C语言第九课" class="headerlink" title="深入C语言第九课"></a>深入C语言第九课</h1><h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><h3 id="定义在所有函数以外的变量称之为全局变量"><a href="#定义在所有函数以外的变量称之为全局变量" class="headerlink" title="定义在所有函数以外的变量称之为全局变量"></a>定义在所有函数以外的变量称之为全局变量</h3><p>全局变量命名用<code>g_</code>开头</p>
+<p>全局变量定义在所有函数以外，可以跨文件</p>
+<p>全局变量跨文件使用时用extern声明，注意声明的时候有变量类型加变量名即可，不需要具体的内容</p>
+<p>全局变量声明以后即可使用</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例如：</span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">char</span> g_szBuf[];<span class="comment">//不能加下标以及赋值</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">char</span> Buf;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">找到全局变量的地址，然后转到二进制文件打开后，Ctrl + G直接跳转至全局变量地址</span><br><span class="line"><span class="comment">//注意！！！这种找全局变量的方式只能在VC6并且是CPP文件下才行，其他IDE需要修改一些设置才行</span></span><br></pre></td></tr></table></figure>
+
+<p>想要在<code>main</code>函数前执行代码，可以在全局变量区先执行</p>
+<p>已初始化的全局变量和已初始化的全局变量他们的地址在一块</p>
+<p>未初始化的全局变量和未初始化的全局变量他们的地址在一块</p>
+<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412222504593.png" alt="image-20210412222504593"></p>
+<p>已初始化的全局变量内存中会提前预留空间，未初始化的全局变量不会提前预留空间</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>这是<code>_cinit()</code>函数，负责全局数据初始化以及C++的全局对象构造函数的调用</p>
+<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412225006475.png" alt="image-20210412225006475"></p>
+<p>这是<code>_cinit()</code>函数中的初始化浮点处理器</p>
+<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412224658096.png" alt="image-20210412224658096"></p>
+<p>第一个<code>_initterm</code>是初始化官方对象，例如<code>stdin``stdout</code>都在里面</p>
+<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412225531661.png" alt="image-20210412225531661"></p>
+<p>第二个<code>_initterm</code>中的两个指针</p>
+<p><code>_PVFV</code>中的第一个p表示指针，第二个v表示void，第三个f表示flag型(这是个啥还没具体搞清楚)，最后一个v表示参数</p>
+<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412230319102.png" alt="image-20210412230319102"></p>
+<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412225905205.png" alt="image-20210412225905205"></p>
+<p>函数初始化会包两层，一层包函数调用，一层包函数的赋值运算</p>
+<p>全局化调用函数在main函数前。下面的图片显示的是定义一个全局变量，而全局变量的值又是一个函数，因此该函数的调用在main函数前</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例如：当g_nTest = GetInt() * GetInt();</span><br><span class="line">如果是</span><br><span class="line"><span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> g_nTest = n;<span class="comment">//会报错，这是C的问题，在c++里面被解决了 </span></span><br><span class="line"><span class="comment">//查看栈的话就会发现它只包了一层</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412233056670.png" alt="image-20210412233056670"></p>
+<h3 id="静态全局变量"><a href="#静态全局变量" class="headerlink" title="静态全局变量"></a>静态全局变量</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> g_szBuf[] = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line"><span class="comment">//将变量锁在该文件里，别的文件无法调用，当然如果另外第二个变量取地址再用下标访问该静态变量是可以的</span></span><br><span class="line"><span class="comment">//是一个受语法约束的变量，装载方式依旧是全局变量的形式</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="静态局部变量"><a href="#静态局部变量" class="headerlink" title="静态局部变量"></a>静态局部变量</h2><p>静态局部变量本质上还是今天全局，只不过不同的是静态局部限制的是不能跨函数，静态全局限制的是不能跨文件</p>
+<p>为了可以找到局部变量，编译器会自动对其名称进行重命名，也叫名称粉碎、名称重组，只有地址是不会瞎改变的，根据地址来找是最靠谱的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> stcnTest = <span class="number">0x1314520</span>;</span><br><span class="line"><span class="comment">// _?stcnTest@?1??main@@9@HA</span></span><br><span class="line">上面的是静态变量名在内存中被重组后的样子</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="VC6的bug"><a href="#VC6的bug" class="headerlink" title="VC6的bug"></a>VC6的bug</h2><h3 id="浮点bug"><a href="#浮点bug" class="headerlink" title="浮点bug"></a><code>浮点bug</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在VC6中输入下面的代码，编译没问题，一输入参数就崩。</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> f;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;f);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//原因是早期的VC6编译器在main函数中有一个判断是否有浮点运算的过程，这个过程判断有浮点运算才初始化，否则认为无浮点运算便不初始化，因此会崩</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> m = <span class="number">0.0f</span>;<span class="comment">//这样运行又不会崩，因为编译器认为有浮点运算，因此对浮点初始化</span></span><br><span class="line">	<span class="keyword">float</span> f;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;f);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//高版本编译器没有这个问题，因为不管有没有全部初始化</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412235443941.png" alt="image-20210412235443941"></p>
+<h3 id="gotobug"><a href="#gotobug" class="headerlink" title="gotobug"></a><code>gotobug</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//正常情况</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	fun();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//bug情况。VC6中会编译通过</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">goto</span> NEXT;<span class="comment">//死循环</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//想要看细节可以看汇编，会发现它是自己跳自己</span></span><br><span class="line">    NEXT:</span><br><span class="line">    ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	fun();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210413000823389.png" alt="image-20210413000823389"></p>
+<h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p><code>fflush(stdin)</code>清除缓存函数只能在低版本vs上对<code>scanf</code>清除</p>
+<p><code>rewind(stdin)</code>高版本清除缓存函数</p>
+<p>可执行文件装载在内存中的位置被称为模块基址</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-深入C语言第八课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/08/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AB%E8%AF%BE/">深入C语言第八课</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/04/08/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AB%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-04-08T14:59:46.184Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
+        <h1 id="深入C语言第八课"><a href="#深入C语言第八课" class="headerlink" title="深入C语言第八课"></a>深入C语言第八课</h1><h2 id="字符与字符串"><a href="#字符与字符串" class="headerlink" title="字符与字符串"></a>字符与字符串</h2><p>设计原则</p>
+<ul>
+<li>强内聚：例如函数自己构建，自己做</li>
+<li>低耦合：减少依赖</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/08/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AB%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-深入C语言第七课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/07/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%83%E8%AF%BE/">深入C语言第七课</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/04/07/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%83%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-04-07T12:15:49.949Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
+        <h1 id="深入C语言第七课"><a href="#深入C语言第七课" class="headerlink" title="深入C语言第七课"></a>深入C语言第七课</h1><h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><p>多维数组是特殊的一维数组</p>
+<p>数组的引用名是第0个元素的地址常量</p>
+<p>多维数组取得基本数据元素需要做多次下标运算</p>
+<h2 id="多维数组下标运算"><a href="#多维数组下标运算" class="headerlink" title="多维数组下标运算"></a>多维数组下标运算</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">type ary[M][N] = ...;</span><br><span class="line"><span class="keyword">int</span> x,y = ...;</span><br><span class="line"></span><br><span class="line">ary[x][y] 两次下标运算</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">ary[x] address is:</span><br><span class="line">(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(ary[N])*x</span><br><span class="line">(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(type[N])*x == (<span class="keyword">int</span>)ary[x] <span class="comment">//得到一维数组</span></span><br><span class="line"></span><br><span class="line">ary[x][y] address is:</span><br><span class="line">(<span class="keyword">int</span>)ary[x] + <span class="keyword">sizeof</span>(type)*y</span><br><span class="line">=(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(type[N])*x + <span class="keyword">sizeof</span>(type)*y</span><br><span class="line">=(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(type)N*x + <span class="keyword">sizeof</span>(type)*y</span><br><span class="line">=(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(type)(N*x + y)<span class="comment">//优化后的结果公式</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ary[<span class="number">3</span>][<span class="number">5</span>] = &#123;</span><br><span class="line">    &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;,<span class="comment">//在栈中最先填充</span></span><br><span class="line">    &#123;<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>&#125;,</span><br><span class="line">    &#123;<span class="number">21</span>,<span class="number">22</span>,<span class="number">23</span>,<span class="number">24</span>,<span class="number">25</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%p\r\n&quot;</span>,&amp;ary[<span class="number">1</span>][<span class="number">2</span>]);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%p\r\n&quot;</span>,(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(<span class="keyword">int</span>[<span class="number">5</span>])*<span class="number">1</span> + <span class="keyword">sizeof</span>(<span class="keyword">int</span>)*<span class="number">2</span>);</span><br><span class="line"><span class="comment">//sizeof(int[5])*1中的int[5]意义：括号内填的单个元素为一维数组，所以这样写</span></span><br><span class="line"><span class="comment">//sizeof(int)*2中的int意义：括号内填的单个元素为一个int整型，所以这样写</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">5</span>,y = <span class="number">8</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%p\r\n&quot;</span>,&amp;ary[x][y]);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%p\r\n&quot;</span>,(<span class="keyword">int</span>)ary + <span class="keyword">sizeof</span>(<span class="keyword">int</span>[<span class="number">5</span>])*x + <span class="keyword">sizeof</span>(<span class="keyword">int</span>)*y);</span><br><span class="line"><span class="comment">//sizeof(int[5])*x和sizeof(int)*y都是常量</span></span><br><span class="line"><span class="comment">//(int)ary加数组名它也是一个常量</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h2><p>数组名作为参数传递给函数时，函数内的数组名为常量(地址常量)，可以参与运算，例如<code>ary[]</code>作为函数参数传参，函数内可以<code>ary++</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[]、*、-&gt;     这三个符号有间接访问的功能</span><br><span class="line">间接访问的关键不在于传递的参数是不是指针，而在于有没有上面三个符号</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串有两个流派</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">先报长度，后报数据=========&gt;Pascal style      Pascal风格</span><br><span class="line">访问效率高，跳着取</span><br><span class="line">    </span><br><span class="line">先报数据，后接结束标志=====&gt;C style            C风格</span><br><span class="line">利于实时传输</span><br><span class="line">    </span><br><span class="line"><span class="keyword">char</span> szBuf[] = <span class="string">&quot;Hello&quot;</span>;<span class="comment">//此处有隐类型转换</span></span><br><span class="line"><span class="keyword">short</span> <span class="keyword">int</span> wszBuf[] = <span class="string">&quot;Hello&quot;</span>;<span class="comment">//注意！不同编码版本转化会触发强类型检查，因此会报错</span></span><br><span class="line"><span class="keyword">short</span> <span class="keyword">int</span> wszBuf[] = <span class="string">L&quot;Hello&quot;</span>;<span class="comment">//需要加上L这样就可以做到类型一致</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;locale.h&gt;</span></span></span><br><span class="line">setlocale(LC_ALL,<span class="string">&quot;chs&quot;</span>);<span class="comment">//该函数用于应对不同编码环境时计算机不认识的情况</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/07/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%83%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-深入C语言第六课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/">深入C语言第六课</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-04-06T08:10:04.154Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
+        <h1 id="深入C语言第六课"><a href="#深入C语言第六课" class="headerlink" title="深入C语言第六课"></a>深入C语言第六课</h1><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>递归用来解决非线性问题，效率比循环至少低一倍，因为总路线长，去了还要回来</p>
+<p>循环用来解决线性问题</p>
+<p>线性问题：有唯一的头和唯一的尾。</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">函数功能</span><br><span class="line">各个参数意义</span><br><span class="line">返回值意义</span><br><span class="line">备注或其他信息</span><br><span class="line">*版本和修改日期，修改人</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line">&#x2F;*</span><br><span class="line">Maze:迷宫求解</span><br><span class="line">char szMaze[][25]:</span><br><span class="line">int x:</span><br><span class="line">int y:</span><br><span class="line">int nRow:</span><br><span class="line">返回值:无</span><br><span class="line">使用递归实现</span><br><span class="line">*版本和修改日期，修改人</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int ary[5] &#x3D; &#123;1,2,3,4,5&#125;;</span><br><span class="line">ary[2] &#x3D; 30;&#x2F;&#x2F;下标运算</span><br><span class="line">&#x2F;&#x2F;下标运算需要地址类型和类整型</span><br><span class="line">数组特性：连续性、一致性，不留空，不对齐，不重叠。元素类型一致。</span><br><span class="line">下标运算的计算法则</span><br><span class="line">type ary[M] &#x3D; ....;</span><br><span class="line">int n &#x3D; ...;</span><br><span class="line">ary[n] address is :</span><br><span class="line">(int)ary + sizeof(type)*n&#x2F;&#x2F;数组下标运算是做这个公式的运算</span><br><span class="line">第0个元素的地址 + sizeof(type)*n</span><br><span class="line">第0个元素的地址 + sizeof(int)*n</span><br><span class="line">第0个元素的地址 + 4*n</span><br><span class="line">&#x3D;&#x3D; n下标的地址&#x2F;&#x2F;这就达到了访问n下标的元素内容</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">取出00400000的DWORD值</span><br><span class="line">(int)ary + sizeof(type)*n &#x3D; 0x00400000</span><br><span class="line">n &#x3D; (0x00400000 - (int)ary) &#x2F; sizof(type)</span><br><span class="line">这样就可以求出某数组元素位置的下标值</span><br></pre></td></tr></table></figure>
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 2;</span><br><span class="line">int b &#x3D; 3;</span><br><span class="line">a + b &#x3D; 5;&#x2F;&#x2F;这个5是整型常量</span><br><span class="line">加减乘除取模、数学类运算、位运算得到的结果都是常量。</span><br></pre></td></tr></table></figure>
+
+<p>第四行最后第四个字节</p>
+<p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\MZ.png"></p>
+<p>两行半后的四字节</p>
+<p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\PE.png" alt="PE"></p>
+<p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\main首地址.png" alt="main首地址"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-深入C语言第五课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -553,449 +973,6 @@
 
 
   
-    <article id="post-C语言第十五课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/20/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE/">文件操作</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/03/20/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-20T06:49:11.553Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="C语言第十五课"><a href="#C语言第十五课" class="headerlink" title="C语言第十五课"></a>C语言第十五课</h1><h2 id="打开文件fopen"><a href="#打开文件fopen" class="headerlink" title="打开文件fopen"></a>打开文件<code>fopen</code></h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">FILE* <span class="title">fopen</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* fileName, <span class="keyword">const</span> <span class="keyword">char</span>* openMode)</span></span>;</span><br><span class="line"><span class="comment">//fileName:文件名</span></span><br><span class="line"><span class="comment">//openMode：打开方式</span></span><br><span class="line"></span><br><span class="line">fopen(<span class="string">&quot;text.txt&quot;</span>,<span class="string">&quot;r&quot;</span>);<span class="comment">//以只读模式打开text.txt文件，打开的文件要和程序在同一目录下</span></span><br><span class="line">fopen(<span class="string">&quot;F:\\CR40\\15\\test.txt&quot;</span>, <span class="string">&quot;w&quot;</span>);<span class="comment">//以绝对路径的方式打开，因为\会被当做转义字符，因此需要用两个斜杠\\</span></span><br><span class="line">fopen();<span class="comment">//返回值是一个指针</span></span><br><span class="line">FILE* fp = fopen(<span class="string">&quot;F:\\CR40\\15\\test.txt&quot;</span>, <span class="string">&quot;w&quot;</span>);</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/03/20/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/20/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C语言第十四课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%9B%9B%E8%AF%BE/">堆和栈以及位运算</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%9B%9B%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-18T07:58:51.134Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="C语言第十四课"><a href="#C语言第十四课" class="headerlink" title="C语言第十四课"></a>C语言第十四课</h1><h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><h3 id="动态内存调用"><a href="#动态内存调用" class="headerlink" title="动态内存调用"></a>动态内存调用</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">	<span class="keyword">char</span> b;</span><br><span class="line">&#125;date;</span><br><span class="line">date num[<span class="number">2</span>];</span><br><span class="line"><span class="comment">//&lt;stdlib.h&gt; and &lt;malloc.h&gt;</span></span><br><span class="line"> size = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(date));<span class="comment">//放入类型类型，malloc函数会根据sizeof的数值动态给内存大小</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">calloc</span>(number,<span class="keyword">sizeof</span>(date));<span class="comment">//几个sizeof大小</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%9B%9B%E8%AF%BE/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">堆</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">位运算</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">与</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">或</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异或</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">动态内存调用</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">左移<<</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">右移>></a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/18/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E5%9B%9B%E8%AF%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C语言第十三课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/">结构体、共用体、枚举</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-17T12:41:10.198Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="C语言第十三课"><a href="#C语言第十三课" class="headerlink" title="C语言第十三课"></a>C语言第十三课</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">date</span>	//<span class="keyword">struct</span>是为了说明这是一个结构体类型，_<span class="title">date</span>是结构体名，可以不写</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;				<span class="comment">//结构体内部可以写多个不同类型的数据</span></span><br><span class="line">	<span class="keyword">char</span> b;				<span class="comment">//结构体的大小等于所有变量大小之和，但一般会不准，因为有系统优化对齐的原因。</span></span><br><span class="line">	<span class="keyword">float</span> c[<span class="number">5</span>];</span><br><span class="line">&#125;date;<span class="comment">//告诉编译器有date这个结构体数据类型</span></span><br><span class="line"></span><br><span class="line">date num[<span class="number">2</span>];	<span class="comment">//date类型结构体数组</span></span><br><span class="line"><span class="comment">//结构体指针</span></span><br><span class="line">date *p = &amp;num[<span class="number">0</span>];<span class="comment">//定义一个date类型的指针，将date类型的数组num[0]赋给指针</span></span><br><span class="line"><span class="comment">//指针访问成员</span></span><br><span class="line">p-&gt;a = <span class="number">10</span>;<span class="comment">//将值10赋给指针p指向date类型的num[0]下的int a变量</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>typedef  告诉编译器重新定义一个数据类型，别名。</p>
-<p>函数参数尽量用指针：1、节省空间。2、指针修改形参影响实参。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">结构体</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">共用体</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">枚举</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/17/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C语言第十二课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/">常用函数</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-16T15:08:24.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="C语言第十二课"><a href="#C语言第十二课" class="headerlink" title="C语言第十二课"></a>C语言第十二课</h1><h2 id="常用库函数"><a href="#常用库函数" class="headerlink" title="常用库函数"></a>常用库函数</h2><h3 id="随机函数"><a href="#随机函数" class="headerlink" title="随机函数"></a>随机函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line">srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));<span class="comment">//获取随机数种子</span></span><br><span class="line"><span class="keyword">int</span> type = rand() % <span class="number">3</span>;<span class="comment">//随机0-2这三个数</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">常用库函数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/16/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C语言第十一课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/">指针</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-15T08:44:43.646Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="C语言第十一课"><a href="#C语言第十一课" class="headerlink" title="C语言第十一课"></a>C语言第十一课</h1><h2 id="宏-补充"><a href="#宏-补充" class="headerlink" title="宏(补充)"></a>宏(补充)</h2><p>宏只做简单的替换，任何函数或C语言关键词或者其他什么的不讲究，不会出现替换<code>if...else</code>就报错的情况，当替换复杂的判断或循环函数时，用<code>\</code>斜杠来连接下一行。</p>
-        
-          <a class="article-more-a" href="/2021/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">宏</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">变量</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">指针</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">转义问题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1259,15 +1236,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
