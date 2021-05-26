@@ -161,6 +161,161 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-深入C语言第十二课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/15/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/">深入C语言第十二课</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/04/15/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-04-15T14:19:38.569Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
+        <h1 id="深入C语言第十二课"><a href="#深入C语言第十二课" class="headerlink" title="深入C语言第十二课"></a>深入C语言第十二课</h1><h2 id="指针与函数"><a href="#指针与函数" class="headerlink" title="指针与函数"></a>指针与函数</h2><h3 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">这三个一致叫类型一致，就可以将同函数组成一个函数指针的数组进行循环调用</span><br><span class="line"><span class="comment">//1、参数序列一致</span></span><br><span class="line">例如：</span><br><span class="line">void foo(int,char,float)和void fooB(int,char,float);//它俩一致</span><br><span class="line">void foo(int,float,char)和void fooB(int,char,float);//它俩不一致</span><br><span class="line"></span><br><span class="line"><span class="comment">//2、调用约定一致</span></span><br><span class="line">都为C约定或其他约定</span><br><span class="line"></span><br><span class="line"><span class="comment">//3、返回值类型一致</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">函数指针的定义</span><br><span class="line">void (_cdecl *foo)(int);</span><br><span class="line">void (*foo)(int);</span><br><span class="line">void (*foo)();</span><br><span class="line"></span><br><span class="line">void:返回值</span><br><span class="line">_cdecl:调用约定</span><br><span class="line">(int):参数序列</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数指针数组"><a href="#函数指针数组" class="headerlink" title="函数指针数组"></a>函数指针数组</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">函数指针数组定义</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fooA</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fooB</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fooC</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fooD</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> (*pfn[])() = &#123;fooA,fooB,fooC,fooD&#125;;</span><br><span class="line"></span><br><span class="line">调用</span><br><span class="line">pfn[<span class="number">1</span>]();<span class="comment">//这样就将fooB函数调用了</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>编码禁忌：严禁返回局部变量或参数变量 的 地址！！！因为局部变量或参数变量的地址处于回收状态。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/15/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-深入C语言第十一课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/">深入C语言第十一课</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-04-14T13:46:44.748Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
+        <h1 id="深入C语言第十一课"><a href="#深入C语言第十一课" class="headerlink" title="深入C语言第十一课"></a>深入C语言第十一课</h1><h2 id="宏补充"><a href="#宏补充" class="headerlink" title="宏补充"></a>宏补充</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SET_NAME(s) #s    <span class="comment">//此处的单#号可以把数组名留下</span></span></span><br><span class="line"><span class="keyword">char</span> ary[<span class="number">5</span>][<span class="number">20</span>] = &#123;SET_NAME(ary)&#125;;</span><br><span class="line"><span class="comment">//此时调试就可以看到该数组的名字在该数组元素中</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/myblog\source_posts\深入C语言第十一课\image-20210414220817301.png" alt="image-20210414220817301"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SET_NAME(s) #s</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEF_ARRAY(type,ary,nCount,size) type ary[nCount][size] = &#123;SET_NAME(ary)&#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	DEF_ARRAY(<span class="keyword">char</span>,ary,<span class="number">5</span>,<span class="number">20</span>);<span class="comment">//这里用宏直接对其进行替换</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将自己创建的各种类型名放到一个数组中，用单#号留下类型名，这样可以检查类型是否相同</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//用宏还可以做到给它任意一个数据，它可以自己识别类型，比如给它一个小数，它自动识别为float或double，或者给它一个字符，自动识别为char</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEF_ADD(type)\</span></span><br><span class="line">type type##Add(type x,type y) \</span><br><span class="line">&#123; \</span><br><span class="line">	<span class="keyword">return</span> x+y; \</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CALL_ADD(type,x,y) type##Add(x,y)</span></span><br><span class="line"></span><br><span class="line">DEF_ADD(<span class="keyword">int</span>);</span><br><span class="line">DEF_ADD(<span class="keyword">float</span>);</span><br><span class="line">DEF_ADD(<span class="keyword">double</span>);<span class="comment">//这种用宏的方法就是现在的模板</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = CALL_ADD(<span class="keyword">int</span>,<span class="number">2</span>,<span class="number">4</span>);</span><br><span class="line">    <span class="keyword">float</span> f = CALL_ADD(<span class="keyword">float</span>,<span class="number">2.0</span>,<span class="number">4.0</span>);</span><br><span class="line">    <span class="keyword">double</span> dbl = CALL_ADD(<span class="keyword">double</span>,<span class="number">2.0</span>,<span class="number">4.0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//C++不用这样，因为已经自带关键词了，这种玩宏的方法只有C可以用</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="指针概念"><a href="#指针概念" class="headerlink" title="指针概念"></a>指针概念</h3><p>指针有解释方式的地址。</p>
+<p>地址没有解释方式。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">例如：</span><br><span class="line"><span class="keyword">int</span> *p = <span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">//此处的int就是解释方式</span></span><br><span class="line"><span class="keyword">void</span> *p = <span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">//因为此处的是void，也就是无解释方式，因此它就只是地址</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> *pv = <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">int</span> *pn = <span class="literal">NULL</span>;</span><br><span class="line">pn = pv;<span class="comment">//这一行代码是错误的，因为类型不同，解释方式不同。此处的意思是地址赋值给指针。没有这个逻辑</span></span><br><span class="line">pv = pn;<span class="comment">//这一行代码是对的，此处是将指针赋值给地址，因为指针是地址</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> *pv = <span class="number">0x19ff88</span>;<span class="comment">//这种赋值方式不行，因为0x19ff28是整型，此处会强类型检查。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> *p = <span class="literal">NULL</span>;</span><br><span class="line">*p<span class="comment">//此处的意思是先取指针内的地址值，然后用int来解释该地址。间接访问。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="指针与整型做运算"><a href="#指针与整型做运算" class="headerlink" title="指针与整型做运算"></a>指针与整型做运算</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//同类型指针加法</span></span><br><span class="line">type *ptr = ...;</span><br><span class="line"><span class="keyword">int</span> n = ...;</span><br><span class="line">ptr + n = (type *)((<span class="keyword">int</span>)p + n*<span class="keyword">sizeof</span>(type));<span class="comment">//加完后是同类型指针</span></span><br><span class="line"></span><br><span class="line">== ptr[n] = *(ptr + n);</span><br><span class="line"></span><br><span class="line"><span class="comment">//同类型指针减法</span></span><br><span class="line">type *ptrA = ...;</span><br><span class="line">type *ptrB = ...;</span><br><span class="line">ptrA - ptrB = ((<span class="keyword">int</span>)ptrA - (<span class="keyword">int</span>)ptrB) / <span class="keyword">sizeof</span>(type);<span class="comment">//减完后的值是常量，可以求出两个指针之间的字节数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//补充</span></span><br><span class="line"><span class="keyword">int</span> *p;</span><br><span class="line">++p = <span class="literal">NULL</span>;<span class="comment">//前缀++是指针变量，p可以不断赋值。原因是先p自加1再代入运算。</span></span><br><span class="line">p++ = <span class="literal">NULL</span>;<span class="comment">//此时会报错，因为后缀++是指针常量,p不可以不断赋值。先p代入运算再p自加1。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>*p;</span><br><span class="line">*p++;<span class="comment">//++先结合，然后结合*号。此时是*p指针内存储地址的+1项地址。</span></span><br><span class="line"></span><br><span class="line">(*p)++;<span class="comment">//此处变成了char++。因为*p == char == 一个字节，不同类型指针在内存中存储的空间大小和类型一致</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> *psz = <span class="string">&quot;hello&quot;</span>;<span class="comment">//符合模式下会通过</span></span><br><span class="line"><span class="comment">//此时会报错，因为类型不同，&quot;hello&quot;是特殊的字符串，引用的是字符型常量首地址。</span></span><br><span class="line"><span class="comment">//而char *psz是变量指针</span></span><br><span class="line">psz[<span class="number">0</span>] = <span class="string">&#x27;h&#x27;</span>;</span><br><span class="line"><span class="comment">//如果想要它通过可以修改为下面这个样子</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *psz = <span class="string">&quot;hello&quot;</span>;<span class="comment">//这时就将左右两边的类型一致了</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">char</span> *psz = (<span class="keyword">char</span>*)<span class="string">&quot;hello&quot;</span>;<span class="comment">//加强转</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="对可执行文件修改属性"><a href="#对可执行文件修改属性" class="headerlink" title="对可执行文件修改属性"></a>对可执行文件修改属性</h3><p>十六进制打开可执行文件，找到<code>rdata</code>两行半的一个字节，此处是可读可执行权限</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">WRES</span><br><span class="line"><span class="number">1111</span></span><br><span class="line">读、写、执行、共享</span><br><span class="line"></span><br><span class="line">此处的十六进制C0转化为二进制是<span class="number">1010</span></span><br><span class="line">对应上面就是可读可执行,将它修改为<span class="number">1110</span>，此时就增加了写的权限，对于静态区可以通过这个方法来实现写入 </span><br><span class="line">下面第二张图就是通过这个方式实现静态区写入</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/myblog\source_posts\深入C语言第十一课\image-20210414233847587.png" alt="image-20210414233847587"></p>
+<p><img src="/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/myblog\source_posts\深入C语言第十一课\image-20210414234922398.png" alt="image-20210414234922398"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-深入C语言第十课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -184,8 +339,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
-        <h1 id="深入C语言第十课"><a href="#深入C语言第十课" class="headerlink" title="深入C语言第十课"></a>深入C语言第十课</h1>
+        <h1 id="深入C语言第十课"><a href="#深入C语言第十课" class="headerlink" title="深入C语言第十课"></a>深入C语言第十课</h1><h2 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h2><p>当下面通过不断调用赋值给静态变量时，静态变量只会被赋值一次，后面的情况不会被赋值，因为静态变量是一个受语法约束的全局变量。</p>
+        
+          <a class="article-more-a" href="/2021/04/13/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/#more">展开全文 >></a>
+        
       
 
       
@@ -250,53 +407,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
-        <h1 id="深入C语言第九课"><a href="#深入C语言第九课" class="headerlink" title="深入C语言第九课"></a>深入C语言第九课</h1><h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><h3 id="定义在所有函数以外的变量称之为全局变量"><a href="#定义在所有函数以外的变量称之为全局变量" class="headerlink" title="定义在所有函数以外的变量称之为全局变量"></a>定义在所有函数以外的变量称之为全局变量</h3><p>全局变量命名用<code>g_</code>开头</p>
-<p>全局变量定义在所有函数以外，可以跨文件</p>
-<p>全局变量跨文件使用时用extern声明，注意声明的时候有变量类型加变量名即可，不需要具体的内容</p>
-<p>全局变量声明以后即可使用</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例如：</span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">char</span> g_szBuf[];<span class="comment">//不能加下标以及赋值</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">char</span> Buf;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">找到全局变量的地址，然后转到二进制文件打开后，Ctrl + G直接跳转至全局变量地址</span><br><span class="line"><span class="comment">//注意！！！这种找全局变量的方式只能在VC6并且是CPP文件下才行，其他IDE需要修改一些设置才行</span></span><br></pre></td></tr></table></figure>
-
-<p>想要在<code>main</code>函数前执行代码，可以在全局变量区先执行</p>
-<p>已初始化的全局变量和已初始化的全局变量他们的地址在一块</p>
-<p>未初始化的全局变量和未初始化的全局变量他们的地址在一块</p>
-<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412222504593.png" alt="image-20210412222504593"></p>
-<p>已初始化的全局变量内存中会提前预留空间，未初始化的全局变量不会提前预留空间</p>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>这是<code>_cinit()</code>函数，负责全局数据初始化以及C++的全局对象构造函数的调用</p>
-<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412225006475.png" alt="image-20210412225006475"></p>
-<p>这是<code>_cinit()</code>函数中的初始化浮点处理器</p>
-<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412224658096.png" alt="image-20210412224658096"></p>
-<p>第一个<code>_initterm</code>是初始化官方对象，例如<code>stdin``stdout</code>都在里面</p>
-<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412225531661.png" alt="image-20210412225531661"></p>
-<p>第二个<code>_initterm</code>中的两个指针</p>
-<p><code>_PVFV</code>中的第一个p表示指针，第二个v表示void，第三个f表示flag型(这是个啥还没具体搞清楚)，最后一个v表示参数</p>
-<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412230319102.png" alt="image-20210412230319102"></p>
-<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412225905205.png" alt="image-20210412225905205"></p>
-<p>函数初始化会包两层，一层包函数调用，一层包函数的赋值运算</p>
-<p>全局化调用函数在main函数前。下面的图片显示的是定义一个全局变量，而全局变量的值又是一个函数，因此该函数的调用在main函数前</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例如：当g_nTest = GetInt() * GetInt();</span><br><span class="line">如果是</span><br><span class="line"><span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> g_nTest = n;<span class="comment">//会报错，这是C的问题，在c++里面被解决了 </span></span><br><span class="line"><span class="comment">//查看栈的话就会发现它只包了一层</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412233056670.png" alt="image-20210412233056670"></p>
-<h3 id="静态全局变量"><a href="#静态全局变量" class="headerlink" title="静态全局变量"></a>静态全局变量</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> g_szBuf[] = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line"><span class="comment">//将变量锁在该文件里，别的文件无法调用，当然如果另外第二个变量取地址再用下标访问该静态变量是可以的</span></span><br><span class="line"><span class="comment">//是一个受语法约束的变量，装载方式依旧是全局变量的形式</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="静态局部变量"><a href="#静态局部变量" class="headerlink" title="静态局部变量"></a>静态局部变量</h2><p>静态局部变量本质上还是今天全局，只不过不同的是静态局部限制的是不能跨函数，静态全局限制的是不能跨文件</p>
-<p>为了可以找到局部变量，编译器会自动对其名称进行重命名，也叫名称粉碎、名称重组，只有地址是不会瞎改变的，根据地址来找是最靠谱的</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> stcnTest = <span class="number">0x1314520</span>;</span><br><span class="line"><span class="comment">// _?stcnTest@?1??main@@9@HA</span></span><br><span class="line">上面的是静态变量名在内存中被重组后的样子</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="VC6的bug"><a href="#VC6的bug" class="headerlink" title="VC6的bug"></a>VC6的bug</h2><h3 id="浮点bug"><a href="#浮点bug" class="headerlink" title="浮点bug"></a><code>浮点bug</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在VC6中输入下面的代码，编译没问题，一输入参数就崩。</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> f;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;f);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//原因是早期的VC6编译器在main函数中有一个判断是否有浮点运算的过程，这个过程判断有浮点运算才初始化，否则认为无浮点运算便不初始化，因此会崩</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> m = <span class="number">0.0f</span>;<span class="comment">//这样运行又不会崩，因为编译器认为有浮点运算，因此对浮点初始化</span></span><br><span class="line">	<span class="keyword">float</span> f;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;f);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//高版本编译器没有这个问题，因为不管有没有全部初始化</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210412235443941.png" alt="image-20210412235443941"></p>
-<h3 id="gotobug"><a href="#gotobug" class="headerlink" title="gotobug"></a><code>gotobug</code></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//正常情况</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	fun();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//bug情况。VC6中会编译通过</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">goto</span> NEXT;<span class="comment">//死循环</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//想要看细节可以看汇编，会发现它是自己跳自己</span></span><br><span class="line">    NEXT:</span><br><span class="line">    ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	fun();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/myblog\source_posts\深入C语言第九课\image-20210413000823389.png" alt="image-20210413000823389"></p>
-<h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p><code>fflush(stdin)</code>清除缓存函数只能在低版本vs上对<code>scanf</code>清除</p>
-<p><code>rewind(stdin)</code>高版本清除缓存函数</p>
-<p>可执行文件装载在内存中的位置被称为模块基址</p>
-
+        <h1 id="深入C语言第九课"><a href="#深入C语言第九课" class="headerlink" title="深入C语言第九课"></a>深入C语言第九课</h1><h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><h3 id="定义在所有函数以外的变量称之为全局变量"><a href="#定义在所有函数以外的变量称之为全局变量" class="headerlink" title="定义在所有函数以外的变量称之为全局变量"></a>定义在所有函数以外的变量称之为全局变量</h3>
+        
+          <a class="article-more-a" href="/2021/04/12/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B9%9D%E8%AF%BE/#more">展开全文 >></a>
+        
       
 
       
@@ -520,10 +634,19 @@
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 2;</span><br><span class="line">int b &#x3D; 3;</span><br><span class="line">a + b &#x3D; 5;&#x2F;&#x2F;这个5是整型常量</span><br><span class="line">加减乘除取模、数学类运算、位运算得到的结果都是常量。</span><br></pre></td></tr></table></figure>
 
 <p>第四行最后第四个字节</p>
+<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/MZ.png" class title="MZ"></div>
+
 <p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\MZ.png"></p>
 <p>两行半后的四字节</p>
+<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/PE.png" class title="PE"></div>
+
 <p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\PE.png" alt="PE"></p>
+<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/main%E9%A6%96%E5%9C%B0%E5%9D%80.png" class title="main首地址"></div>
+
 <p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\main首地址.png" alt="main首地址"></p>
+<h2 id="数组指针和指针数组"><a href="#数组指针和指针数组" class="headerlink" title="数组指针和指针数组"></a>数组指针和指针数组</h2><div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84.png" class title="数组指针和指针数组"></div>
+
+<p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\数组指针和指针数组.png" alt="数组指针和指针数组"></p>
 
       
 
@@ -767,183 +890,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/31/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E8%AF%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-深入C语言第二课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/30/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/">深入C语言第二课</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/03/30/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-30T11:24:07.391Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="深入C语言第二课"><a href="#深入C语言第二课" class="headerlink" title="深入C语言第二课"></a>深入C语言第二课</h1><h2 id="rand函数"><a href="#rand函数" class="headerlink" title="rand函数"></a><code>rand</code>函数</h2><p>随机函数</p>
-        
-          <a class="article-more-a" href="/2021/03/30/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">rand函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">scanf函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">命名规范</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">各变量初始化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/30/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E8%AF%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-深入C语言第一课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/29/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/">深入C语言第一课</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/03/29/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-03-29T02:07:00.557Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="深入C语言第一课"><a href="#深入C语言第一课" class="headerlink" title="深入C语言第一课"></a>深入C语言第一课</h1><h2 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h2><h3 id="VC6-0"><a href="#VC6-0" class="headerlink" title="VC6.0"></a>VC6.0</h3><div style="width:70%;margin:auto"><img src="/2021/03/29/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/image-20210329195256144.png" class></div>
-
-<p><img src="/2021/03/29/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/myblog\source_posts\深入C语言第一课\image-20210329195256144.png" alt="image-20210329195256144"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CL.EXE &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;这是编译器，大小只有64kb是因为它是一个shell，它不是关键，关键是上面三个</span><br><span class="line"></span><br><span class="line">C1.DLL</span><br><span class="line">C1XX.DLL</span><br><span class="line">C2.DLL&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;这三个才是关键，负责将源代码转化为二进制</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/03/29/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">main函数内部</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编译器和链接器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/29/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/">展开全文 >></a>
         </p>
       
 

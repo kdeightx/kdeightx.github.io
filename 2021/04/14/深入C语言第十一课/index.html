@@ -7,30 +7,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>深入C语言第六课 | kdeightx</title>
+  <title>深入C语言第十一课 | kdeightx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="深入C语言第六课递归递归用来解决非线性问题，效率比循环至少低一倍，因为总路线长，去了还要回来 循环用来解决线性问题 线性问题：有唯一的头和唯一的尾。 注释123456789101112131415161718&#x2F;*函数功能各个参数意义返回值意义备注或其他信息*版本和修改日期，修改人*&#x2F;&#x2F;*Maze:迷宫求解char szMaze[][25]:int x:int y:in">
+  <meta name="description" content="深入C语言第十一课宏补充123#define SET_NAME(s) #s    &#x2F;&#x2F;此处的单#号可以把数组名留下char ary[5][20] &#x3D; &amp;#123;SET_NAME(ary)&amp;#125;;&#x2F;&#x2F;此时调试就可以看到该数组的名字在该数组元素中   1234567891011121314151617181920212223242526272829#define SET_NAME(s) #s#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入C语言第六课">
-<meta property="og:url" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/index.html">
+<meta property="og:title" content="深入C语言第十一课">
+<meta property="og:url" content="http://example.com/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/index.html">
 <meta property="og:site_name" content="kdeightx">
-<meta property="og:description" content="深入C语言第六课递归递归用来解决非线性问题，效率比循环至少低一倍，因为总路线长，去了还要回来 循环用来解决线性问题 线性问题：有唯一的头和唯一的尾。 注释123456789101112131415161718&#x2F;*函数功能各个参数意义返回值意义备注或其他信息*版本和修改日期，修改人*&#x2F;&#x2F;*Maze:迷宫求解char szMaze[][25]:int x:int y:in">
+<meta property="og:description" content="深入C语言第十一课宏补充123#define SET_NAME(s) #s    &#x2F;&#x2F;此处的单#号可以把数组名留下char ary[5][20] &#x3D; &amp;#123;SET_NAME(ary)&amp;#125;;&#x2F;&#x2F;此时调试就可以看到该数组的名字在该数组元素中   1234567891011121314151617181920212223242526272829#define SET_NAME(s) #s#">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/MZ.png">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog/source_posts/深入C语言第六课/MZ.png">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/PE.png">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog/source_posts/深入C语言第六课/PE.png">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/main%E9%A6%96%E5%9C%B0%E5%9D%80.png">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog/source_posts/深入C语言第六课/main首地址.png">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84.png">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog/source_posts/深入C语言第六课/数组指针和指针数组.png">
-<meta property="article:published_time" content="2021-04-06T08:10:04.154Z">
-<meta property="article:modified_time" content="2021-05-26T06:18:39.261Z">
+<meta property="og:image" content="http://example.com/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/myblog/source_posts/深入C语言第十一课/image-20210414220817301.png">
+<meta property="og:image" content="http://example.com/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/myblog/source_posts/深入C语言第十一课/image-20210414233847587.png">
+<meta property="og:image" content="http://example.com/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/myblog/source_posts/深入C语言第十一课/image-20210414234922398.png">
+<meta property="article:published_time" content="2021-04-14T13:46:44.748Z">
+<meta property="article:modified_time" content="2021-04-14T15:57:47.691Z">
 <meta property="article:author" content="芝士的力量">
-<meta property="article:tag" content="递归">
-<meta property="article:tag" content="数组">
+<meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/MZ.png">
+<meta name="twitter:image" content="http://example.com/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/myblog/source_posts/深入C语言第十一课/image-20210414220817301.png">
   
     <link rel="alternative" href="/atom.xml" title="kdeightx" type="application/atom+xml">
   
@@ -171,14 +165,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-深入C语言第六课" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-深入C语言第十一课" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      深入C语言第六课
+      深入C语言第十一课
     </h1>
   
 
@@ -194,8 +188,8 @@
 
 <!--显示阅读次数完毕-->
         
-        <a href="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2021-04-06T08:10:04.154Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-06</time>
+        <a href="/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2021-04-14T13:46:44.748Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-14</time>
 </a>
         
       </header>
@@ -203,29 +197,22 @@
     <div class="article-entry" itemprop="articleBody">
       
 	  <!-- <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div> -->
-        <h1 id="深入C语言第六课"><a href="#深入C语言第六课" class="headerlink" title="深入C语言第六课"></a>深入C语言第六课</h1><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>递归用来解决非线性问题，效率比循环至少低一倍，因为总路线长，去了还要回来</p>
-<p>循环用来解决线性问题</p>
-<p>线性问题：有唯一的头和唯一的尾。</p>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">函数功能</span><br><span class="line">各个参数意义</span><br><span class="line">返回值意义</span><br><span class="line">备注或其他信息</span><br><span class="line">*版本和修改日期，修改人</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line">&#x2F;*</span><br><span class="line">Maze:迷宫求解</span><br><span class="line">char szMaze[][25]:</span><br><span class="line">int x:</span><br><span class="line">int y:</span><br><span class="line">int nRow:</span><br><span class="line">返回值:无</span><br><span class="line">使用递归实现</span><br><span class="line">*版本和修改日期，修改人</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+        <h1 id="深入C语言第十一课"><a href="#深入C语言第十一课" class="headerlink" title="深入C语言第十一课"></a>深入C语言第十一课</h1><h2 id="宏补充"><a href="#宏补充" class="headerlink" title="宏补充"></a>宏补充</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SET_NAME(s) #s    <span class="comment">//此处的单#号可以把数组名留下</span></span></span><br><span class="line"><span class="keyword">char</span> ary[<span class="number">5</span>][<span class="number">20</span>] = &#123;SET_NAME(ary)&#125;;</span><br><span class="line"><span class="comment">//此时调试就可以看到该数组的名字在该数组元素中</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int ary[5] &#x3D; &#123;1,2,3,4,5&#125;;</span><br><span class="line">ary[2] &#x3D; 30;&#x2F;&#x2F;下标运算</span><br><span class="line">&#x2F;&#x2F;下标运算需要地址类型和类整型</span><br><span class="line">数组特性：连续性、一致性，不留空，不对齐，不重叠。元素类型一致。</span><br><span class="line">下标运算的计算法则</span><br><span class="line">type ary[M] &#x3D; ....;</span><br><span class="line">int n &#x3D; ...;</span><br><span class="line">ary[n] address is :</span><br><span class="line">(int)ary + sizeof(type)*n&#x2F;&#x2F;数组下标运算是做这个公式的运算</span><br><span class="line">第0个元素的地址 + sizeof(type)*n</span><br><span class="line">第0个元素的地址 + sizeof(int)*n</span><br><span class="line">第0个元素的地址 + 4*n</span><br><span class="line">&#x3D;&#x3D; n下标的地址&#x2F;&#x2F;这就达到了访问n下标的元素内容</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">取出00400000的DWORD值</span><br><span class="line">(int)ary + sizeof(type)*n &#x3D; 0x00400000</span><br><span class="line">n &#x3D; (0x00400000 - (int)ary) &#x2F; sizof(type)</span><br><span class="line">这样就可以求出某数组元素位置的下标值</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/myblog\source_posts\深入C语言第十一课\image-20210414220817301.png" alt="image-20210414220817301"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SET_NAME(s) #s</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEF_ARRAY(type,ary,nCount,size) type ary[nCount][size] = &#123;SET_NAME(ary)&#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	DEF_ARRAY(<span class="keyword">char</span>,ary,<span class="number">5</span>,<span class="number">20</span>);<span class="comment">//这里用宏直接对其进行替换</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将自己创建的各种类型名放到一个数组中，用单#号留下类型名，这样可以检查类型是否相同</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//用宏还可以做到给它任意一个数据，它可以自己识别类型，比如给它一个小数，它自动识别为float或double，或者给它一个字符，自动识别为char</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEF_ADD(type)\</span></span><br><span class="line">type type##Add(type x,type y) \</span><br><span class="line">&#123; \</span><br><span class="line">	<span class="keyword">return</span> x+y; \</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CALL_ADD(type,x,y) type##Add(x,y)</span></span><br><span class="line"></span><br><span class="line">DEF_ADD(<span class="keyword">int</span>);</span><br><span class="line">DEF_ADD(<span class="keyword">float</span>);</span><br><span class="line">DEF_ADD(<span class="keyword">double</span>);<span class="comment">//这种用宏的方法就是现在的模板</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = CALL_ADD(<span class="keyword">int</span>,<span class="number">2</span>,<span class="number">4</span>);</span><br><span class="line">    <span class="keyword">float</span> f = CALL_ADD(<span class="keyword">float</span>,<span class="number">2.0</span>,<span class="number">4.0</span>);</span><br><span class="line">    <span class="keyword">double</span> dbl = CALL_ADD(<span class="keyword">double</span>,<span class="number">2.0</span>,<span class="number">4.0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//C++不用这样，因为已经自带关键词了，这种玩宏的方法只有C可以用</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 2;</span><br><span class="line">int b &#x3D; 3;</span><br><span class="line">a + b &#x3D; 5;&#x2F;&#x2F;这个5是整型常量</span><br><span class="line">加减乘除取模、数学类运算、位运算得到的结果都是常量。</span><br></pre></td></tr></table></figure>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="指针概念"><a href="#指针概念" class="headerlink" title="指针概念"></a>指针概念</h3><p>指针有解释方式的地址。</p>
+<p>地址没有解释方式。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">例如：</span><br><span class="line"><span class="keyword">int</span> *p = <span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">//此处的int就是解释方式</span></span><br><span class="line"><span class="keyword">void</span> *p = <span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">//因为此处的是void，也就是无解释方式，因此它就只是地址</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> *pv = <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">int</span> *pn = <span class="literal">NULL</span>;</span><br><span class="line">pn = pv;<span class="comment">//这一行代码是错误的，因为类型不同，解释方式不同。此处的意思是地址赋值给指针。没有这个逻辑</span></span><br><span class="line">pv = pn;<span class="comment">//这一行代码是对的，此处是将指针赋值给地址，因为指针是地址</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> *pv = <span class="number">0x19ff88</span>;<span class="comment">//这种赋值方式不行，因为0x19ff28是整型，此处会强类型检查。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> *p = <span class="literal">NULL</span>;</span><br><span class="line">*p<span class="comment">//此处的意思是先取指针内的地址值，然后用int来解释该地址。间接访问。</span></span><br></pre></td></tr></table></figure>
 
-<p>第四行最后第四个字节</p>
-<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/MZ.png" class title="MZ"></div>
+<h3 id="指针与整型做运算"><a href="#指针与整型做运算" class="headerlink" title="指针与整型做运算"></a>指针与整型做运算</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//同类型指针加法</span></span><br><span class="line">type *ptr = ...;</span><br><span class="line"><span class="keyword">int</span> n = ...;</span><br><span class="line">ptr + n = (type *)((<span class="keyword">int</span>)p + n*<span class="keyword">sizeof</span>(type));<span class="comment">//加完后是同类型指针</span></span><br><span class="line"></span><br><span class="line">== ptr[n] = *(ptr + n);</span><br><span class="line"></span><br><span class="line"><span class="comment">//同类型指针减法</span></span><br><span class="line">type *ptrA = ...;</span><br><span class="line">type *ptrB = ...;</span><br><span class="line">ptrA - ptrB = ((<span class="keyword">int</span>)ptrA - (<span class="keyword">int</span>)ptrB) / <span class="keyword">sizeof</span>(type);<span class="comment">//减完后的值是常量，可以求出两个指针之间的字节数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//补充</span></span><br><span class="line"><span class="keyword">int</span> *p;</span><br><span class="line">++p = <span class="literal">NULL</span>;<span class="comment">//前缀++是指针变量，p可以不断赋值。原因是先p自加1再代入运算。</span></span><br><span class="line">p++ = <span class="literal">NULL</span>;<span class="comment">//此时会报错，因为后缀++是指针常量,p不可以不断赋值。先p代入运算再p自加1。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>*p;</span><br><span class="line">*p++;<span class="comment">//++先结合，然后结合*号。此时是*p指针内存储地址的+1项地址。</span></span><br><span class="line"></span><br><span class="line">(*p)++;<span class="comment">//此处变成了char++。因为*p == char == 一个字节，不同类型指针在内存中存储的空间大小和类型一致</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> *psz = <span class="string">&quot;hello&quot;</span>;<span class="comment">//符合模式下会通过</span></span><br><span class="line"><span class="comment">//此时会报错，因为类型不同，&quot;hello&quot;是特殊的字符串，引用的是字符型常量首地址。</span></span><br><span class="line"><span class="comment">//而char *psz是变量指针</span></span><br><span class="line">psz[<span class="number">0</span>] = <span class="string">&#x27;h&#x27;</span>;</span><br><span class="line"><span class="comment">//如果想要它通过可以修改为下面这个样子</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *psz = <span class="string">&quot;hello&quot;</span>;<span class="comment">//这时就将左右两边的类型一致了</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">char</span> *psz = (<span class="keyword">char</span>*)<span class="string">&quot;hello&quot;</span>;<span class="comment">//加强转</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\MZ.png"></p>
-<p>两行半后的四字节</p>
-<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/PE.png" class title="PE"></div>
+<h3 id="对可执行文件修改属性"><a href="#对可执行文件修改属性" class="headerlink" title="对可执行文件修改属性"></a>对可执行文件修改属性</h3><p>十六进制打开可执行文件，找到<code>rdata</code>两行半的一个字节，此处是可读可执行权限</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">WRES</span><br><span class="line"><span class="number">1111</span></span><br><span class="line">读、写、执行、共享</span><br><span class="line"></span><br><span class="line">此处的十六进制C0转化为二进制是<span class="number">1010</span></span><br><span class="line">对应上面就是可读可执行,将它修改为<span class="number">1110</span>，此时就增加了写的权限，对于静态区可以通过这个方法来实现写入 </span><br><span class="line">下面第二张图就是通过这个方式实现静态区写入</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\PE.png" alt="PE"></p>
-<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/main%E9%A6%96%E5%9C%B0%E5%9D%80.png" class title="main首地址"></div>
-
-<p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\main首地址.png" alt="main首地址"></p>
-<h2 id="数组指针和指针数组"><a href="#数组指针和指针数组" class="headerlink" title="数组指针和指针数组"></a>数组指针和指针数组</h2><div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84.png" class title="数组指针和指针数组"></div>
-
-<p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\数组指针和指针数组.png" alt="数组指针和指针数组"></p>
+<p><img src="/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/myblog\source_posts\深入C语言第十一课\image-20210414233847587.png" alt="image-20210414233847587"></p>
+<p><img src="/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/myblog\source_posts\深入C语言第十一课\image-20210414234922398.png" alt="image-20210414234922398"></p>
 
       
 
@@ -255,21 +242,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -320,7 +292,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/14/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,18 +306,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/07/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%83%E8%AF%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/04/15/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          深入C语言第七课
+          深入C语言第十二课
         
       </div>
     </a>
   
   
-    <a href="/2021/04/03/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入C语言第五课</div>
+    <a href="/2021/04/13/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E8%AF%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入C语言第十课</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -372,7 +344,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">深入C语言第六课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">1.1.</span> <span class="toc-text">递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">1.2.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.3.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-number">1.4.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="toc-number">1.5.</span> <span class="toc-text">数组指针和指针数组</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">深入C语言第十一课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8F%E8%A1%A5%E5%85%85"><span class="toc-number">1.1.</span> <span class="toc-text">宏补充</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-number">1.2.</span> <span class="toc-text">指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.1.</span> <span class="toc-text">指针概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B4%E5%9E%8B%E5%81%9A%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.2.</span> <span class="toc-text">指针与整型做运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.3.</span> <span class="toc-text">对可执行文件修改属性</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
