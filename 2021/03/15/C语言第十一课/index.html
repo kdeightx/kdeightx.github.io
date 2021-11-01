@@ -17,7 +17,7 @@
 <meta property="og:description" content="C语言第十一课宏(补充)宏只做简单的替换，任何函数或C语言关键词或者其他什么的不讲究，不会出现替换if...else就报错的情况，当替换复杂的判断或循环函数时，用\斜杠来连接下一行。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-15T08:44:43.646Z">
-<meta property="article:modified_time" content="2021-03-15T12:30:42.908Z">
+<meta property="article:modified_time" content="2021-11-01T06:41:09.335Z">
 <meta property="article:author" content="芝士的力量">
 <meta property="article:tag" content="宏">
 <meta property="article:tag" content="变量">
@@ -257,6 +257,19 @@
 </blockquote>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memcpy</span><span class="params">( <span class="keyword">void</span> *dest, <span class="keyword">const</span> <span class="keyword">void</span> *src, <span class="keyword">size_t</span> count )</span></span>;<span class="comment">//细节看文档</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fun</span><span class="params">(<span class="keyword">void</span> *p,<span class="keyword">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="built_in">memcpy</span>(num,p,size);<span class="comment">//拷贝内存,比如p为数组指针，size就是p数组的大小，num就是要拷贝到的目标指针。这个目标指针也得和p一个类型一个大小，这样才能接受。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="多级指针"><a href="#多级指针" class="headerlink" title="多级指针"></a>多级指针</h3><p>多级指针在函数中的使用</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cs</span><span class="params">(<span class="keyword">int</span> *p)</span><span class="comment">//此为一级指针，用来接收变量的地址</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    (*p)++;<span class="comment">//此处的*p表示的是指针变量里面的地址所指向的变量内容</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, *p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">csp</span><span class="params">(<span class="keyword">int</span> **p)</span><span class="comment">//此为二级指针，用来接收一级指针的地址</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    (**p)++;<span class="comment">//此处的**p表示的是二级指针变量里面的一级指针变量里面的地址所指向的变量内容</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, **p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> *ap = &amp;age;</span><br><span class="line">    cs(&amp;age);<span class="comment">//此处传递的是变量的地址，用一级指针来接收</span></span><br><span class="line">    csp(&amp;ap);<span class="comment">//此处传递的是一级指针的地址，用二级指针来接收</span></span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>一级指针用来接收变量的地址</p>
+</li>
+<li><p>二级指针用来接收一级指针变量的地址</p>
+</li>
+<li><p>多级指针依此类推</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *p = <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">int</span> **q =<span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">p = &amp;age ----&gt;用指针p接收变量age的地址</span><br><span class="line">q = &amp;p   ----&gt;用二级指针q来接收一级指针p的地址</span><br><span class="line"></span><br><span class="line">*p       ----&gt;这可以访问变量age下的数据内容</span><br><span class="line">*p == &amp;age;它俩相对应</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">**q      ----&gt;这可以访问变量age下的数据内容</span><br><span class="line">**q == &amp;age;它俩相对应</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <h2 id="注意！！！"><a href="#注意！！！" class="headerlink" title="注意！！！"></a>注意！！！</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fun1</span><span class="params">(<span class="keyword">void</span> *p, <span class="keyword">int</span> count)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ((<span class="keyword">int</span>*)p)[i]);<span class="comment">//可以对形参直接操作，但要注意加括号！！！</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">5</span>] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">char</span> b[<span class="number">5</span>] = &#123; <span class="string">&quot;hello&quot;</span> &#125;;</span><br><span class="line">    Fun1(a, <span class="number">5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -413,7 +426,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">C语言第十一课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8F-%E8%A1%A5%E5%85%85"><span class="toc-number">1.1.</span> <span class="toc-text">宏(补充)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BD%AC%E4%B9%89%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">字符和字符串的转义问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%8A%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.</span> <span class="toc-text">变量的生命周期及作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.1.</span> <span class="toc-text">变量分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">全局变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.2.</span> <span class="toc-text">变量的作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">程序作用域、函数作用域、块作用域</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-number">1.4.</span> <span class="toc-text">指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#amp"><span class="toc-number">1.4.1.</span> <span class="toc-text">&amp;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.2.</span> <span class="toc-text">*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%8C%87%E9%92%88"><span class="toc-number">1.4.3.</span> <span class="toc-text">定义指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%81%EF%BC%81%EF%BC%81"><span class="toc-number">1.5.</span> <span class="toc-text">注意！！！</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE"><span class="toc-number">1.</span> <span class="toc-text">C语言第十一课</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8F-%E8%A1%A5%E5%85%85"><span class="toc-number">1.1.</span> <span class="toc-text">宏(补充)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BD%AC%E4%B9%89%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">字符和字符串的转义问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%8A%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.</span> <span class="toc-text">变量的生命周期及作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.1.</span> <span class="toc-text">变量分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">全局变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.2.</span> <span class="toc-text">变量的作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">程序作用域、函数作用域、块作用域</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-number">1.4.</span> <span class="toc-text">指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#amp"><span class="toc-number">1.4.1.</span> <span class="toc-text">&amp;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.2.</span> <span class="toc-text">*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%8C%87%E9%92%88"><span class="toc-number">1.4.3.</span> <span class="toc-text">定义指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E6%8C%87%E9%92%88"><span class="toc-number">1.4.4.</span> <span class="toc-text">多级指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%81%EF%BC%81%EF%BC%81"><span class="toc-number">1.5.</span> <span class="toc-text">注意！！！</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -595,26 +608,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">单位</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">进制转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">递归</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">内存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">命名法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
@@ -631,6 +624,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">内存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">命名法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">单位</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进制转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">共用体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">枚举</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">宏</a>
               </li>
              
@@ -644,18 +669,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">转义问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">共用体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">枚举</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,10 +712,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">常用字符串函数</a>
               </li>
              
@@ -716,6 +725,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">运算符</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
