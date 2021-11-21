@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="kdeightx">
 <meta property="og:description" content="深入C语言第六课递归递归用来解决非线性问题，效率比循环至少低一倍，因为总路线长，去了还要回来 循环用来解决线性问题 线性问题：有唯一的头和唯一的尾。 注释123456789101112131415161718&#x2F;*函数功能各个参数意义返回值意义备注或其他信息*版本和修改日期，修改人*&#x2F;&#x2F;*Maze:迷宫求解char szMaze[][25]:int x:int y:in">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/MZ.png">
+<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/MZ.png">
 <meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog/source_posts/深入C语言第六课/MZ.png">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/PE.png">
+<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/PE.png">
 <meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog/source_posts/深入C语言第六课/PE.png">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/main%E9%A6%96%E5%9C%B0%E5%9D%80.png">
+<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/main%E9%A6%96%E5%9C%B0%E5%9D%80.png">
 <meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog/source_posts/深入C语言第六课/main首地址.png">
-<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84.png">
+<meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84.png">
 <meta property="og:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog/source_posts/深入C语言第六课/数组指针和指针数组.png">
 <meta property="article:published_time" content="2021-04-06T08:10:04.154Z">
 <meta property="article:modified_time" content="2021-05-26T06:18:39.261Z">
@@ -30,7 +30,7 @@
 <meta property="article:tag" content="递归">
 <meta property="article:tag" content="数组">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/MZ.png">
+<meta name="twitter:image" content="http://example.com/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/MZ.png">
   
     <link rel="alternative" href="/atom.xml" title="kdeightx" type="application/atom+xml">
   
@@ -211,17 +211,17 @@
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 2;</span><br><span class="line">int b &#x3D; 3;</span><br><span class="line">a + b &#x3D; 5;&#x2F;&#x2F;这个5是整型常量</span><br><span class="line">加减乘除取模、数学类运算、位运算得到的结果都是常量。</span><br></pre></td></tr></table></figure>
 
 <p>第四行最后第四个字节</p>
-<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/MZ.png" class title="MZ"></div>
+<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/MZ.png" class title="MZ"></div>
 
 <p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\MZ.png"></p>
 <p>两行半后的四字节</p>
-<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/PE.png" class title="PE"></div>
+<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/PE.png" class title="PE"></div>
 
 <p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\PE.png" alt="PE"></p>
-<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/main%E9%A6%96%E5%9C%B0%E5%9D%80.png" class title="main首地址"></div>
+<div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/main%E9%A6%96%E5%9C%B0%E5%9D%80.png" class title="main首地址"></div>
 
 <p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\main首地址.png" alt="main首地址"></p>
-<h2 id="数组指针和指针数组"><a href="#数组指针和指针数组" class="headerlink" title="数组指针和指针数组"></a>数组指针和指针数组</h2><div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84.png" class title="数组指针和指针数组"></div>
+<h2 id="数组指针和指针数组"><a href="#数组指针和指针数组" class="headerlink" title="数组指针和指针数组"></a>数组指针和指针数组</h2><div style="width:70%;margin:auto"><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84.png" class title="数组指针和指针数组"></div>
 
 <p><img src="/2021/04/06/%E6%B7%B1%E5%85%A5C%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E8%AF%BE/myblog\source_posts\深入C语言第六课\数组指针和指针数组.png" alt="数组指针和指针数组"></p>
 
@@ -620,14 +620,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">常用字符串函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">预处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">堆</a>
               </li>
              
@@ -664,6 +656,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">常用字符串函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">预处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">循环结构</a>
               </li>
              
@@ -685,6 +685,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yilia主题配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">栈和函数</a>
               </li>
              
               <li class="article-tag-list-item">
